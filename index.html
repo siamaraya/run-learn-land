@@ -1,447 +1,915 @@
 <title>วังหมีกระทิง Run Learn Land — Project Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ศูนย์รวมข้อมูลโปรเจกต์ วังหมีกระทิง RUN LEARN LAND — งานค้าง ฝ่ายงาน การเงิน และข้อมูลกิจกรรม สำหรับทีมงานทั้ง 12 ฝ่าย">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #EFEEE3;
-    --bg-glow-a: rgba(198, 123, 31, 0.14);
-    --bg-glow-b: rgba(62, 107, 74, 0.16);
-    --ink: #22301F;
-    --ink-2: #5A6753;
-    --ink-3: #83907C;
-    --card: rgba(34, 48, 31, 0.055);
-    --card-strong: rgba(34, 48, 31, 0.09);
-    --glass-nav: rgba(239, 238, 227, 0.78);
-    --accent: #B36F15;
-    --accent-soft: rgba(179, 111, 21, 0.14);
-    --fern: #3E6B4A;
-    --fern-soft: rgba(62, 107, 74, 0.14);
-    --good: #3E7D52;
-    --good-soft: rgba(62, 125, 82, 0.15);
-    --warn: #A06B10;
-    --warn-soft: rgba(160, 107, 16, 0.15);
-    --crit: #A94436;
-    --crit-soft: rgba(169, 68, 54, 0.13);
-    --shadow: 0 10px 30px rgba(30, 42, 28, 0.13);
-    --shadow-soft: 0 4px 14px rgba(30, 42, 28, 0.09);
-    --bar-track: rgba(34, 48, 31, 0.08);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #121B14;
-      --bg-glow-a: rgba(229, 164, 60, 0.10);
-      --bg-glow-b: rgba(127, 168, 139, 0.10);
-      --ink: #E9EDE2;
-      --ink-2: #A5B29E;
-      --ink-3: #76836F;
-      --card: rgba(233, 237, 226, 0.055);
-      --card-strong: rgba(233, 237, 226, 0.10);
-      --glass-nav: rgba(18, 27, 20, 0.72);
-      --accent: #E5A43C;
-      --accent-soft: rgba(229, 164, 60, 0.16);
-      --fern: #7FA88B;
-      --fern-soft: rgba(127, 168, 139, 0.16);
-      --good: #6FBE87;
-      --good-soft: rgba(111, 190, 135, 0.16);
-      --warn: #DFA742;
-      --warn-soft: rgba(223, 167, 66, 0.16);
-      --crit: #E07A6B;
-      --crit-soft: rgba(224, 122, 107, 0.15);
-      --shadow: 0 12px 34px rgba(0, 0, 0, 0.38);
-      --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.28);
-      --bar-track: rgba(233, 237, 226, 0.09);
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #121B14;
-    --bg-glow-a: rgba(229, 164, 60, 0.10);
-    --bg-glow-b: rgba(127, 168, 139, 0.10);
-    --ink: #E9EDE2;
-    --ink-2: #A5B29E;
-    --ink-3: #76836F;
-    --card: rgba(233, 237, 226, 0.055);
-    --card-strong: rgba(233, 237, 226, 0.10);
-    --glass-nav: rgba(18, 27, 20, 0.72);
-    --accent: #E5A43C;
-    --accent-soft: rgba(229, 164, 60, 0.16);
-    --fern: #7FA88B;
-    --fern-soft: rgba(127, 168, 139, 0.16);
-    --good: #6FBE87;
-    --good-soft: rgba(111, 190, 135, 0.16);
-    --warn: #DFA742;
-    --warn-soft: rgba(223, 167, 66, 0.16);
-    --crit: #E07A6B;
-    --crit-soft: rgba(224, 122, 107, 0.15);
-    --shadow: 0 12px 34px rgba(0, 0, 0, 0.38);
-    --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.28);
-    --bar-track: rgba(233, 237, 226, 0.09);
-  }
-  :root[data-theme="light"] {
-    --bg: #EFEEE3;
-    --bg-glow-a: rgba(198, 123, 31, 0.14);
-    --bg-glow-b: rgba(62, 107, 74, 0.16);
-    --ink: #22301F;
-    --ink-2: #5A6753;
-    --ink-3: #83907C;
-    --card: rgba(34, 48, 31, 0.055);
-    --card-strong: rgba(34, 48, 31, 0.09);
-    --glass-nav: rgba(239, 238, 227, 0.78);
-    --accent: #B36F15;
-    --accent-soft: rgba(179, 111, 21, 0.14);
-    --fern: #3E6B4A;
-    --fern-soft: rgba(62, 107, 74, 0.14);
-    --good: #3E7D52;
-    --good-soft: rgba(62, 125, 82, 0.15);
-    --warn: #A06B10;
-    --warn-soft: rgba(160, 107, 16, 0.15);
-    --crit: #A94436;
-    --crit-soft: rgba(169, 68, 54, 0.13);
-    --shadow: 0 10px 30px rgba(30, 42, 28, 0.13);
-    --shadow-soft: 0 4px 14px rgba(30, 42, 28, 0.09);
-    --bar-track: rgba(34, 48, 31, 0.08);
+    --avocado: #9BAA36;
+    --forest: #202A1C;
+    --terracotta: #D46F35;
+    --mustard: #E3A72D;
+    --cream: #F4E7CF;
+    --soil: #654638;
+    --paper: #FFFDF8;
+    --muted: #66715E;
+    --border: rgba(32, 42, 28, 0.14);
+    --shadow: 0 20px 50px rgba(32, 42, 28, 0.12);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --max: 1180px;
+    --done-ink: #5F6E1B;
+    --done-soft: rgba(155, 170, 54, 0.16);
+    --warn-ink: #8A6410;
+    --warn-soft: rgba(227, 167, 45, 0.16);
+    --risk-ink: #A84E1D;
+    --risk-soft: rgba(212, 111, 53, 0.15);
+    --bar-track: rgba(32, 42, 28, 0.08);
   }
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    * { animation: none !important; transition: none !important; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
   }
+
   body {
     margin: 0;
-    font-family: "Sukhumvit Set", "Thonburi", "Leelawadee UI", "Noto Sans Thai", -apple-system, "Segoe UI", sans-serif;
+    color: var(--forest);
     background:
-      radial-gradient(900px 520px at 85% -5%, var(--bg-glow-a), transparent 65%),
-      radial-gradient(1100px 640px at -10% 30%, var(--bg-glow-b), transparent 60%),
-      var(--bg);
-    background-attachment: fixed;
-    color: var(--ink);
-    line-height: 1.65;
+      radial-gradient(circle at 8% 0%, rgba(227, 167, 45, 0.14), transparent 24rem),
+      linear-gradient(180deg, #FFF9ED 0%, var(--paper) 42%, #F5F6EA 100%);
+    font-family: "Google Sans", "Noto Sans Thai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.72;
+    font-variant-numeric: tabular-nums;
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
   a:focus-visible, button:focus-visible, summary:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 3px solid var(--terracotta);
     outline-offset: 3px;
     border-radius: 6px;
   }
 
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
-
-  /* ---------- cover ---------- */
-  .cover {
-    margin: 0 0 34px; border-radius: 22px; overflow: hidden;
-    box-shadow: var(--shadow);
+  .container { width: min(calc(100% - 32px), var(--max)); margin-inline: auto; }
+  section { padding: 56px 0; scroll-margin-top: 84px; }
+  @media (max-width: 1200px) {
+    section { scroll-margin-top: 140px; }
   }
-  .cover img { display: block; width: 100%; height: auto; }
+  h1, h2, h3 { text-wrap: balance; }
 
-  /* ---------- desktop: ขยายให้อ่านง่ายขึ้น ---------- */
-  @media (min-width: 1100px) {
-    html { font-size: 18.5px; }
-    .wrap, .nav-inner { max-width: 1240px; }
-    section { padding: 48px 0; }
-    header.hero { padding: 72px 0 48px; }
-    h2 { font-size: 1.7rem; }
-    .stat b { font-size: 1.85rem; }
-    .cd-tile { min-width: 104px; }
-    .cd-tile b { font-size: 2.3rem; }
-    .j-step p { font-size: 0.95rem; }
-  }
-
-  /* ---------- nav ---------- */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    background: var(--glass-nav);
+  /* ---------- topbar ---------- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: var(--shadow-soft);
+    background: rgba(255, 253, 248, 0.84);
+    border-bottom: 1px solid var(--border);
   }
-  .nav-inner {
-    max-width: 1060px; margin: 0 auto; padding: 10px 20px;
-    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  .nav {
+    min-height: 70px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
   }
-  .nav-brand { font-weight: 800; font-size: 0.95rem; letter-spacing: 0.01em; }
-  .nav-brand small { color: var(--accent); font-weight: 700; }
-  .nav-links { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    object-fit: cover;
+    border: 2px solid var(--forest);
+  }
+  .brand small { display: block; font-size: 12px; font-weight: 800; color: var(--terracotta); letter-spacing: 0.04em; line-height: 1.2; }
+  .brand span b { display: block; font-size: 16px; line-height: 1.25; }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 700;
+  }
   .nav-links a {
-    color: var(--ink-2); font-size: 0.85rem; font-weight: 600;
-    padding: 5px 11px; border-radius: 999px;
+    text-decoration: none;
+    opacity: 0.78;
+    padding: 10px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
   }
-  .nav-links a:hover { background: var(--card-strong); color: var(--ink); text-decoration: none; }
+  .nav-links a:hover { opacity: 1; color: var(--terracotta); }
 
   /* ---------- hero ---------- */
-  header.hero { padding: 64px 0 40px; }
-  .eyebrow {
-    font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--accent);
+  .hero { padding: 44px 0 20px; }
+  .cover {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
   }
-  h1 {
-    font-size: clamp(2rem, 5.4vw, 3.3rem);
-    font-weight: 800; line-height: 1.15; margin: 10px 0 6px;
-    text-wrap: balance; letter-spacing: -0.015em;
-  }
-  .hero-sub { color: var(--ink-2); font-size: 1.05rem; max-width: 40rem; margin: 0 0 20px; }
-  .hero-quote {
-    margin: 22px 0; padding: 18px 22px; max-width: 34rem;
-    background: var(--card); border-radius: 18px;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-soft);
-    font-size: 1.12rem; font-weight: 600; line-height: 1.55; text-wrap: balance;
-  }
-  .hero-quote span { color: var(--accent); }
-  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 26px; }
-  .chip {
-    font-size: 0.82rem; font-weight: 600; padding: 5px 13px; border-radius: 999px;
-    background: var(--fern-soft); color: var(--fern);
-  }
-  .chip.amber { background: var(--accent-soft); color: var(--accent); }
+  .cover img { width: 100%; height: auto; }
 
-  .countdown { display: flex; gap: 12px; flex-wrap: wrap; align-items: stretch; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 44px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(155, 170, 54, 0.16);
+    border: 1px solid rgba(155, 170, 54, 0.34);
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    font-size: clamp(40px, 6.5vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    margin: 22px 0 18px;
+    font-weight: 900;
+  }
+  h1 .h1-accent { display: block; color: var(--terracotta); }
+
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 21px);
+    color: var(--muted);
+    margin: 0 0 22px;
+    max-width: 640px;
+  }
+
+  .hero-quote {
+    margin: 0 0 22px;
+    padding: 20px 24px;
+    max-width: 520px;
+    background: var(--cream);
+    border: 1px solid rgba(32, 42, 28, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.5;
+    text-wrap: balance;
+  }
+  .hero-quote span { color: var(--terracotta); }
+  .hero-quote .quote-src { font-size: 13px; font-weight: 600; color: var(--muted); margin-top: 6px; }
+
+  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 26px; }
+  .chip {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(155, 170, 54, 0.16);
+    color: var(--done-ink);
+  }
+  .chip.amber { background: var(--risk-soft); color: var(--risk-ink); }
+
+  .logo-card {
+    background: var(--cream);
+    border: 1px solid rgba(32, 42, 28, 0.1);
+    border-radius: 34px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+    transform: rotate(1.2deg);
+  }
+  .logo-card img {
+    border-radius: 24px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 560px;
+  }
   .cd-tile {
-    min-width: 86px; padding: 14px 16px; text-align: center;
-    background: var(--card); border-radius: 16px;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-soft);
+    padding: 16px 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
   }
   .cd-tile b {
-    display: block; font-size: 1.9rem; font-weight: 800;
-    font-variant-numeric: tabular-nums; line-height: 1.1; color: var(--accent);
+    display: block;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--terracotta);
+    letter-spacing: -0.02em;
   }
-  .cd-tile small { color: var(--ink-3); font-size: 0.76rem; font-weight: 600; }
+  .cd-tile small { color: var(--muted); font-size: 13px; font-weight: 700; }
+
   .hero-cta { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
   .btn {
-    display: inline-block; padding: 10px 20px; border-radius: 999px;
-    font-weight: 700; font-size: 0.9rem;
-    background: var(--accent); color: var(--bg);
-    box-shadow: var(--shadow-soft); transition: transform 0.15s ease;
-  }
-  .btn:hover { transform: translateY(-1px); text-decoration: none; }
-  .btn.ghost { background: var(--card-strong); color: var(--ink); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-
-  /* ---------- sections ---------- */
-  section { padding: 36px 0; }
-  .sec-head { margin-bottom: 22px; }
-  .sec-head .eyebrow { color: var(--fern); }
-  h2 { font-size: 1.5rem; font-weight: 800; margin: 6px 0 4px; letter-spacing: -0.01em; }
-  .sec-head p { color: var(--ink-2); margin: 0; max-width: 44rem; }
-  h3 { font-size: 1.02rem; font-weight: 700; margin: 0 0 6px; }
-
-  .card {
-    background: var(--card); border-radius: 18px; padding: 20px 22px;
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    box-shadow: var(--shadow);
-  }
-
-  /* stat tiles */
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
-  .stat b {
-    display: block; font-size: 1.55rem; font-weight: 800;
-    font-variant-numeric: tabular-nums; letter-spacing: -0.01em; line-height: 1.2;
-  }
-  .stat b.amber { color: var(--accent); }
-  .stat b.green { color: var(--fern); }
-  .stat small { color: var(--ink-2); font-size: 0.83rem; font-weight: 600; }
-  .stat .note { display: block; color: var(--ink-3); font-size: 0.76rem; margin-top: 4px; }
-
-  /* journey */
-  .journey { display: flex; gap: 10px; flex-wrap: wrap; }
-  .j-step {
-    flex: 1 1 160px; padding: 16px 18px; border-radius: 16px;
-    background: var(--card); box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  }
-  .j-step .eyebrow { color: var(--accent); letter-spacing: 0.12em; }
-  .j-step p { margin: 4px 0 0; font-size: 0.88rem; color: var(--ink-2); }
-
-  /* tasks */
-  .task-list { display: flex; flex-direction: column; gap: 10px; }
-  .task {
-    display: flex; align-items: flex-start; gap: 14px;
-    background: var(--card); border-radius: 16px; padding: 14px 18px;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-soft);
-  }
-  .task .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; margin-top: 8px; }
-  .dot.warn { background: var(--warn); }
-  .dot.good { background: var(--good); }
-  .dot.crit { background: var(--crit); }
-  .task-body { flex: 1; min-width: 0; }
-  .task-body b { font-size: 0.95rem; }
-  .task-body p { margin: 2px 0 0; color: var(--ink-2); font-size: 0.85rem; }
-  .task-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
-  .tag {
-    font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 999px;
-    background: var(--card-strong); color: var(--ink-2);
-  }
-  .tag.owner { background: var(--fern-soft); color: var(--fern); }
-  .tag.due { background: var(--warn-soft); color: var(--warn); }
-  .tag.done { background: var(--good-soft); color: var(--good); }
-  .tag.risk { background: var(--crit-soft); color: var(--crit); }
-
-  /* departments */
-  .dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
-  .dept {
-    background: var(--card); border-radius: 18px; padding: 20px 22px;
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    box-shadow: var(--shadow);
-    display: flex; flex-direction: column; gap: 10px;
-  }
-  .dept-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-  .dept-head h3 { flex: 1 1 auto; min-width: 0; }
-  .dept-goal { font-size: 0.88rem; color: var(--ink-2); margin: 0; }
-  .dept-goal em { color: var(--accent); font-style: normal; font-weight: 700; }
-  .people { display: flex; gap: 6px; flex-wrap: wrap; }
-  .who { font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
-  .who.member { background: var(--card-strong); color: var(--ink-2); font-weight: 600; }
-  details { margin-top: 2px; }
-  summary {
-    cursor: pointer; font-size: 0.83rem; font-weight: 700; color: var(--fern);
-    list-style: none; display: flex; align-items: center; gap: 6px; user-select: none;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::before { content: "▸"; transition: transform 0.15s ease; font-size: 0.75rem; }
-  details[open] summary::before { transform: rotate(90deg); }
-  details ul { margin: 8px 0 4px; padding-left: 20px; font-size: 0.85rem; color: var(--ink-2); }
-  details li { margin: 3px 0; }
-  .q-block {
-    margin-top: 8px; padding: 10px 14px; border-radius: 12px;
-    background: var(--accent-soft); font-size: 0.83rem; color: var(--ink-2);
-  }
-  .q-block b { color: var(--accent); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; display: block; margin-bottom: 3px; }
-  .q-block ul { margin: 0; padding-left: 18px; }
-
-  /* finance */
-  .fin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; align-items: start; }
-  .bar-row { display: grid; grid-template-columns: 9.5rem 1fr 5.5rem; gap: 10px; align-items: center; margin: 9px 0; font-size: 0.85rem; }
-  .bar-row .lbl { color: var(--ink-2); font-weight: 600; text-align: right; }
-  .bar-track { background: var(--bar-track); border-radius: 999px; height: 14px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 999px; background: var(--fern); }
-  .bar-fill.amber { background: var(--accent); }
-  .bar-row .val { font-variant-numeric: tabular-nums; font-weight: 700; text-align: right; }
-  .fin-note { font-size: 0.78rem; color: var(--ink-3); margin-top: 10px; }
-  .fin-note strong { color: var(--warn); }
-  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
-  th { text-align: left; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); padding: 6px 8px; font-weight: 700; }
-  td { padding: 8px; border-top: 1px solid var(--bar-track); }
-  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-  tr.total td { font-weight: 800; color: var(--accent); }
-  .table-scroll { overflow-x: auto; }
-
-  /* timeline */
-  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 26px; }
-  .timeline::before {
-    content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px;
-    width: 2px; background: var(--bar-track); border-radius: 2px;
-  }
-  .t-item { position: relative; padding: 0 0 26px; }
-  .t-item::before {
-    content: ""; position: absolute; left: -25px; top: 8px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: var(--fern); box-shadow: 0 0 0 4px var(--fern-soft);
-  }
-  .t-item.next::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
-  .t-date { font-size: 0.78rem; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; }
-  .t-item h3 { margin: 3px 0 4px; }
-  .t-item p { margin: 0; color: var(--ink-2); font-size: 0.88rem; max-width: 42rem; }
-
-  /* files */
-  .file-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
-  .file-card {
-    background: var(--card); border-radius: 16px; padding: 16px 18px;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-soft); display: block; color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 26px;
+    border-radius: 999px;
+    background: var(--forest);
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 15px;
+    white-space: nowrap;
     transition: transform 0.15s ease;
   }
-  .file-card:hover { transform: translateY(-2px); text-decoration: none; }
-  .file-card .kind { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-  .file-card b { display: block; margin: 4px 0 2px; font-size: 0.95rem; }
-  .file-card p { margin: 0; font-size: 0.8rem; color: var(--ink-2); }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.ghost {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--forest);
+    border: 1px solid var(--border);
+  }
 
-  footer { padding: 40px 0 60px; color: var(--ink-3); font-size: 0.8rem; }
-  footer .wrap { display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  /* ---------- section head ---------- */
+  .section-head {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 42px;
+    align-items: start;
+    margin-bottom: 30px;
+  }
+  .section-head h2 {
+    font-size: clamp(30px, 4.5vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin: 12px 0 0;
+    font-weight: 900;
+  }
+  .section-head p { margin: 0; color: var(--muted); font-size: 17px; }
+  h3 { font-size: 19px; font-weight: 800; margin: 0 0 8px; letter-spacing: -0.01em; }
+
+  /* ---------- overview: metrics / pillars / journey ---------- */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .metric {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    padding: 20px 22px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .metric strong {
+    display: block;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--terracotta);
+    letter-spacing: -0.02em;
+  }
+  .metric span { color: var(--muted); font-size: 14px; font-weight: 600; }
+  .metric .note { display: block; color: var(--muted); font-size: 13px; opacity: 0.85; margin-top: 2px; }
+
+  .location {
+    margin-top: 14px;
+    padding: 16px 22px;
+    background: var(--cream);
+    border: 1px solid rgba(32, 42, 28, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 15px;
+  }
+  .location b { color: var(--soil); }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .pillar {
+    background: var(--forest);
+    color: white;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    min-height: 120px;
+  }
+  .pillar b { display: block; font-size: 22px; font-weight: 900; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .pillar span { opacity: 0.76; font-size: 14px; }
+
+  .journey-title { margin: 34px 0 12px; color: var(--muted); font-size: 15px; font-weight: 800; }
+  .journey { display: flex; gap: 10px; flex-wrap: wrap; }
+  .j-step {
+    flex: 1 1 180px;
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--border);
+  }
+  .j-step .step-no {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+  .j-step p { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+
+  /* ---------- generic cards ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+  }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .card ul { margin: 12px 0 0; padding-left: 20px; color: var(--muted); font-size: 15px; }
+  .card li + li { margin-top: 6px; }
+
+  /* ---------- routes ---------- */
+  .route-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .route {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    padding: 24px;
+    min-height: 215px;
+    background: var(--cream);
+    border: 2px solid var(--forest);
+  }
+  .route:nth-child(2) { background: #E5E9C5; }
+  .route:nth-child(3) { background: #F4D8C4; }
+  .route:nth-child(4) { background: #F5E4A6; }
+  .route small { font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px; }
+  .route strong { display: block; font-size: 44px; font-weight: 900; line-height: 1; margin: 14px 0; letter-spacing: -0.02em; }
+  .route p { margin: 0; color: var(--soil); font-size: 15px; }
+  .route-note { margin-top: 16px; color: var(--muted); font-size: 14px; }
+
+  /* ---------- tbd chip ---------- */
+  .tbd {
+    display: inline-block;
+    background: #FFF4CC;
+    color: #6B5310;
+    border: 1px dashed #CBAA43;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-weight: 800;
+    font-size: 0.82em;
+    line-height: 1.5;
+    vertical-align: middle;
+  }
+
+  /* ---------- notice (forest block) ---------- */
+  .notice {
+    background: var(--forest);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    box-shadow: var(--shadow);
+  }
+  .notice h3 { margin: 0 0 8px; font-size: clamp(20px, 3vw, 26px); color: white; }
+  .notice p { margin: 0; color: rgba(255, 255, 255, 0.78); font-size: 15px; }
+  .notice strong { color: var(--mustard); font-weight: 800; }
+
+  /* ---------- tasks ---------- */
+  .task-list { display: flex; flex-direction: column; gap: 12px; }
+  .task {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+  }
+  .task .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; margin-top: 9px; }
+  .dot.warn { background: var(--mustard); }
+  .dot.good { background: var(--avocado); }
+  .dot.crit { background: var(--terracotta); }
+  .task-body { flex: 1; min-width: 0; }
+  .task-body b { font-size: 16px; }
+  .task-body p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+  .task-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .tag {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(32, 42, 28, 0.07);
+    color: var(--muted);
+  }
+  .tag.owner { background: var(--done-soft); color: var(--done-ink); }
+  .tag.due { background: var(--warn-soft); color: var(--warn-ink); }
+  .tag.done { background: var(--done-soft); color: var(--done-ink); }
+  .tag.risk { background: var(--risk-soft); color: var(--risk-ink); }
+
+  /* ---------- departments ---------- */
+  .dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+  .dept {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dept-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .dept-head h3 { flex: 1 1 auto; min-width: 0; margin: 0; }
+  .dept-goal { font-size: 14px; color: var(--muted); margin: 0; }
+  .dept-goal em { color: var(--terracotta); font-style: normal; font-weight: 800; }
+  .people { display: flex; gap: 6px; flex-wrap: wrap; }
+  .who {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--risk-soft);
+    color: var(--risk-ink);
+  }
+  .who.member { background: rgba(32, 42, 28, 0.07); color: var(--muted); font-weight: 700; }
+  .dept details { margin-top: 2px; }
+  .dept summary {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--done-ink);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    padding: 10px 0;
+    min-height: 44px;
+  }
+  .dept summary::-webkit-details-marker { display: none; }
+  .dept summary::before { content: "▸"; transition: transform 0.15s ease; font-size: 12px; }
+  .dept details[open] summary::before { transform: rotate(90deg); }
+  .dept details ul { margin: 4px 0 4px; padding-left: 20px; font-size: 14px; color: var(--muted); }
+  .dept details li { margin: 3px 0; }
+  .q-block {
+    margin-top: 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--cream);
+    font-size: 14px;
+    color: var(--soil);
+  }
+  .q-block b {
+    color: var(--risk-ink);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .q-block ul { margin: 0; padding-left: 18px; }
+
+  /* ---------- finance ---------- */
+  .fin-notice { margin-bottom: 18px; }
+  .fin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 16px; align-items: start; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr 5.5rem;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .bar-row .lbl { color: var(--muted); font-weight: 700; text-align: right; }
+  .bar-track { background: var(--bar-track); border-radius: 999px; height: 14px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; background: var(--avocado); }
+  .bar-fill.amber { background: var(--terracotta); }
+  .bar-row .val { font-weight: 800; text-align: right; }
+  .fin-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+  .fin-note strong { color: var(--warn-ink); }
+
+  .table-wrap {
+    overflow-x: auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--forest);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; }
+  tr.total td { font-weight: 900; color: var(--risk-ink); }
+  .td-soft { color: var(--muted); font-size: 13px; }
+
+  /* ---------- pledge ---------- */
+  .pledge {
+    background: linear-gradient(135deg, rgba(155, 170, 54, 0.95), rgba(32, 42, 28, 0.98));
+    color: white;
+    border-radius: 34px;
+    padding: 42px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pledge::after {
+    content: "RUN • LEARN • LAND";
+    position: absolute;
+    right: -30px;
+    bottom: -16px;
+    font-size: clamp(44px, 8vw, 110px);
+    font-weight: 900;
+    opacity: 0.07;
+    white-space: nowrap;
+  }
+  .pledge .eyebrow { background: rgba(255, 255, 255, 0.12); border: 0; color: white; }
+  .pledge blockquote {
+    margin: 18px 0 0;
+    font-size: clamp(21px, 3vw, 34px);
+    line-height: 1.45;
+    font-weight: 800;
+    max-width: 900px;
+    text-wrap: balance;
+  }
+
+  /* ---------- meetings timeline + cta ---------- */
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: var(--bar-track);
+    border-radius: 2px;
+  }
+  .t-item { position: relative; padding: 0 0 28px; }
+  .t-item::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--avocado);
+    box-shadow: 0 0 0 4px rgba(155, 170, 54, 0.2);
+  }
+  .t-item.next::before { background: var(--terracotta); box-shadow: 0 0 0 4px rgba(212, 111, 53, 0.18); }
+  .t-date { font-size: 13px; font-weight: 800; color: var(--terracotta); letter-spacing: 0.06em; }
+  .t-item h3 { margin: 3px 0 4px; }
+  .t-item p { margin: 0; color: var(--muted); font-size: 15px; max-width: 46rem; }
+
+  .cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background: var(--terracotta);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 34px;
+    margin-top: 26px;
+  }
+  .cta h3 { margin: 0; font-size: clamp(22px, 3vw, 30px); color: white; }
+  .cta p { margin: 8px 0 0; font-size: 19px; font-weight: 700; }
+
+  /* ---------- accordion (faq) ---------- */
+  .accordion details {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 0 20px;
+    margin-bottom: 12px;
+  }
+  .accordion summary {
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 20px 0;
+    list-style: none;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .accordion summary::-webkit-details-marker { display: none; }
+  .accordion summary::after { content: "+"; flex: none; font-size: 22px; line-height: 1; color: var(--terracotta); }
+  .accordion details[open] summary::after { content: "−"; }
+  .accordion details p, .accordion details ul { color: var(--muted); margin-top: 0; padding-bottom: 18px; font-size: 15px; }
+
+  /* ---------- files ---------- */
+  .file-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 14px; }
+  .file-card {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    display: block;
+    color: var(--forest);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+  a.file-card:hover { transform: translateY(-2px); }
+  .file-card .kind {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+  .file-card b { display: block; margin: 4px 0 2px; font-size: 16px; }
+  .file-card p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  footer { padding: 20px 0 60px; color: var(--muted); font-size: 14px; }
+  footer .container { display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .hero-grid, .section-head { grid-template-columns: 1fr; gap: 18px; }
+    .section-head p { font-size: 16px; }
+    .logo-card { max-width: 380px; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .route-grid { grid-template-columns: 1fr 1fr; }
+    .metrics { grid-template-columns: 1fr 1fr; }
+    .pillars { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .nav { justify-content: flex-start; }
+    .nav-links {
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 6px;
+      gap: 6px;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      background: rgba(32, 42, 28, 0.06);
+      padding: 11px 16px;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 620px) {
+    section { padding: 44px 0; }
+    .hero { padding-top: 28px; }
+    .cover { margin-bottom: 28px; }
+    .cards, .route-grid, .pillars, .metrics { grid-template-columns: 1fr; }
+    .cta { flex-direction: column; align-items: flex-start; }
+    .pledge { padding: 28px; }
+    .notice { padding: 24px; }
+    .card, .dept { padding: 20px; }
+    .bar-row {
+      grid-template-columns: 1fr auto;
+      grid-template-areas: "lbl val" "bar bar";
+      gap: 4px 10px;
+      margin: 14px 0;
+    }
+    .bar-row .lbl { grid-area: lbl; text-align: left; }
+    .bar-row .bar-track { grid-area: bar; }
+    .bar-row .val { grid-area: val; }
+  }
+
+  @media (max-width: 460px) {
+    .countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .eyebrow { border-radius: 16px; }
+  }
 </style>
 
-<nav>
-  <div class="nav-inner">
-    <div class="nav-brand">วังหมีกระทิง <small>Run Learn Land</small></div>
-    <div class="nav-links">
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#overview">
+      <img class="brand-mark" src="assets/logo.jpg" alt="โลโก้วังหมีกระทิง RUN LEARN LAND">
+      <span><b>วังหมีกระทิง</b><small>RUN LEARN LAND · Project Hub</small></span>
+    </a>
+    <nav class="nav-links" aria-label="เมนูหลัก">
       <a href="#overview">ภาพรวม</a>
+      <a href="#routes">ระยะกิจกรรม</a>
+      <a href="#packages">แพ็กเกจ</a>
+      <a href="#registration">การสมัคร</a>
       <a href="#tasks">งานค้าง</a>
       <a href="#depts">ฝ่ายงาน</a>
       <a href="#finance">การเงิน</a>
+      <a href="#impact">Impact</a>
       <a href="#meetings">ประชุม</a>
+      <a href="#faq">FAQ</a>
       <a href="#files">ไฟล์</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="cover"><img src="assets/cover.jpg" alt="Key visual วังหมีกระทิง Run Learn Land — เด็กๆ วิ่งเล่นและสำรวจธรรมชาติ"></div>
-    <div class="eyebrow">Wang Mi × Krating · Family Nature Trail Festival</div>
-    <h1>วังหมีกระทิง Run Learn Land</h1>
-    <p class="hero-sub">25–27 ธันวาคม 2569 · ศูนย์รวมข้อมูลโปรเจกต์สำหรับทีมงานทั้ง 12 ฝ่าย — สรุปจาก Google Slides ประชุมล่าสุด</p>
-
-    <div class="hero-quote">
-      "เส้นทางนี้<span>ยังสร้างไม่เสร็จ</span><br>เพราะเรากำลังสร้างมันไปด้วยกัน"
-      <div style="font-size:0.78rem; font-weight:600; color:var(--ink-3); margin-top:6px;">— Concept: WANG MI · TRAIL OF THE FUTURE</div>
-    </div>
-
-    <div class="chip-row">
-      <span class="chip amber">Run นำ — ระดมทุนจากการวิ่ง</span>
-      <span class="chip">เทรล 15 กม.</span>
-      <span class="chip">เส้นศึกษาธรรมชาติ 5 กม.</span>
-      <span class="chip">Target: Family · นักวิ่งเทรล · Creator สายธรรมชาติ</span>
-    </div>
-
-    <div class="countdown" id="countdown" aria-label="นับถอยหลังถึงวันงาน">
-      <div class="cd-tile"><b id="cd-d">—</b><small>วัน</small></div>
-      <div class="cd-tile"><b id="cd-h">—</b><small>ชั่วโมง</small></div>
-      <div class="cd-tile"><b id="cd-m">—</b><small>นาที</small></div>
-      <div class="cd-tile"><b id="cd-s">—</b><small>วินาที</small></div>
-    </div>
-
-    <div class="hero-cta">
-      <a class="btn" href="https://docs.google.com/presentation/d/1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4/edit" target="_blank" rel="noopener">เปิดสไลด์ต้นทาง ↗</a>
-      <a class="btn ghost" href="#tasks">ดูงานค้างก่อนประชุมหน้า</a>
-    </div>
+    </nav>
   </div>
 </header>
 
-<section id="overview">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Overview</div>
-      <h2>ภาพรวมโปรเจกต์</h2>
-      <p>งานนี้ไม่ position เป็นงานวิ่งเทรลธรรมดา — ใช้การวิ่งเป็นประตูพาครอบครัวและเด็กกลับมาเชื่อมโยงกับธรรมชาติ และเปลี่ยนการวิ่งหนึ่งครั้งให้เกิดพื้นที่เรียนรู้ธรรมชาติระยะยาว</p>
+<section class="hero">
+  <div class="container">
+    <div class="cover"><img src="assets/cover.jpg" alt="Key visual วังหมีกระทิง Run Learn Land — เด็กๆ วิ่งเล่นและสำรวจธรรมชาติ"></div>
+
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Wang Mi × Krating · Family Nature Trail Festival</span>
+        <h1>วังหมีกระทิง <span class="h1-accent">RUN LEARN LAND</span></h1>
+        <p class="hero-sub">25–27 ธันวาคม 2569 · ศูนย์รวมข้อมูลโปรเจกต์สำหรับทีมงานทั้ง 12 ฝ่าย — สรุปจาก Google Slides ประชุมล่าสุด</p>
+
+        <div class="hero-quote">
+          "เส้นทางนี้<span>ยังสร้างไม่เสร็จ</span><br>เพราะเรากำลังสร้างมันไปด้วยกัน"
+          <div class="quote-src">— Concept: WANG MI · TRAIL OF THE FUTURE</div>
+        </div>
+
+        <div class="chip-row">
+          <span class="chip amber">Run นำ — ระดมทุนจากการวิ่ง</span>
+          <span class="chip">เทรล 15 กม.</span>
+          <span class="chip">เส้นศึกษาธรรมชาติ 5 กม.</span>
+          <span class="chip">Target: Family · นักวิ่งเทรล · Creator สายธรรมชาติ</span>
+        </div>
+      </div>
+
+      <div class="logo-card">
+        <img src="assets/logo.jpg" alt="โลโก้กิจกรรม วังหมีกระทิง RUN LEARN LAND">
+      </div>
     </div>
 
-    <div class="stats">
-      <div class="card stat"><b class="amber">25–27 ธ.ค.</b><small>วันจัดงาน (2569)</small><span class="note">3 วัน 2 คืน ที่วังหมี กระทิง</span></div>
-      <div class="card stat"><b class="green">2,659,800</b><small>เป้ารายรับรวม (บาท)</small><span class="note">บัตรวิ่ง + เส้นทางธรรมชาติ + sponsor</span></div>
-      <div class="card stat"><b>851,000</b><small>ประมาณการรายจ่าย (บาท)</small><span class="note">8 หมวดหลัก — ดูรายละเอียดด้านล่าง</span></div>
-      <div class="card stat"><b class="green">1,100</b><small>เป้าผู้เข้าร่วม (คน)</small><span class="note">นักวิ่ง 800 + เส้นทางธรรมชาติ 300</span></div>
-      <div class="card stat"><b class="amber">12 ฝ่าย</b><small>โครงสร้างทีมงาน</small><span class="note">Pre-event → Event</span></div>
-    </div>
+    <div style="margin-top:34px;">
+      <div class="countdown" id="countdown" aria-label="นับถอยหลังถึงวันงาน">
+        <div class="cd-tile"><b id="cd-d">—</b><small>วัน</small></div>
+        <div class="cd-tile"><b id="cd-h">—</b><small>ชั่วโมง</small></div>
+        <div class="cd-tile"><b id="cd-m">—</b><small>นาที</small></div>
+        <div class="cd-tile"><b id="cd-s">—</b><small>วินาที</small></div>
+      </div>
 
-    <div style="margin-top:26px;">
-      <h3 style="margin-bottom:12px; color:var(--ink-2); font-size:0.9rem;">Journey Experience ของผู้ร่วมงาน — 5 ขั้น</h3>
-      <div class="journey">
-        <div class="j-step"><div class="eyebrow">01 · Arrive</div><p>ฉันมาถึงโลกของ Wang Mi</p></div>
-        <div class="j-step"><div class="eyebrow">02 · Discover</div><p>ฉันค้นพบธรรมชาติและวังหมี</p></div>
-        <div class="j-step"><div class="eyebrow">03 · Play &amp; Connect</div><p>ฉันทำกิจกรรมกับครอบครัวและผู้คน</p></div>
-        <div class="j-step"><div class="eyebrow">04 · Achieve</div><p>ฉันพิชิตบางอย่าง</p></div>
-        <div class="j-step"><div class="eyebrow">05 · Leave a Legacy</div><p>ฉันทิ้งบางอย่างที่ดีไว้ให้อนาคต — Legacy Wall</p></div>
+      <div class="hero-cta">
+        <a class="btn" href="https://docs.google.com/presentation/d/1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4/edit" target="_blank" rel="noopener">เปิดสไลด์ต้นทาง ↗</a>
+        <a class="btn ghost" href="#tasks">ดูงานค้างก่อนประชุมหน้า</a>
       </div>
     </div>
   </div>
 </section>
 
+<section id="overview">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Overview</span>
+        <h2>ภาพรวมโปรเจกต์</h2>
+      </div>
+      <p>งานนี้ไม่ position เป็นงานวิ่งเทรลธรรมดา — ใช้การวิ่งเป็นประตูพาครอบครัวและเด็กกลับมาเชื่อมโยงกับธรรมชาติ และเปลี่ยนการวิ่งหนึ่งครั้งให้เกิดพื้นที่เรียนรู้ธรรมชาติระยะยาว</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><strong>25–27 ธ.ค. 2569</strong><span>วันจัดงาน · 3 วัน 2 คืน ที่วังหมี กระทิง</span><span class="note"><span class="tbd">รอยืนยันอย่างเป็นทางการ</span></span></div>
+      <div class="metric"><strong>2,659,800 บาท</strong><span>เป้ารายรับรวมทั้งงาน</span><span class="note">คำนวณรวม: บัตรวิ่ง + เส้นทางธรรมชาติ + sponsor</span></div>
+      <div class="metric"><strong>851,000 บาท</strong><span>ประมาณการรายจ่าย</span><span class="note">8 หมวดหลัก — ดูรายละเอียดที่แผนการเงิน</span></div>
+      <div class="metric"><strong>1,100 คน</strong><span>เป้าผู้เข้าร่วม</span><span class="note">ประมาณจากจำนวนบัตร: นักวิ่ง 800 + ธรรมชาติ 300</span></div>
+      <div class="metric"><strong>12 ฝ่าย</strong><span>โครงสร้างทีมงาน</span><span class="note">Pre-event → Event</span></div>
+      <div class="metric"><strong>1,000,000 บาท</strong><span>เป้าหมายระดมทุนสุทธิของโครงการ</span></div>
+      <div class="metric"><strong>300 ไร่</strong><span>พื้นที่เป้าหมายเพื่อการเรียนรู้ธรรมชาติ</span></div>
+      <div class="metric"><strong>5–15 กม.</strong><span>แนวระยะกิจกรรมสำหรับครอบครัวและนักวิ่ง</span></div>
+      <div class="metric"><strong>1 Living Playground</strong><span>พื้นที่ที่การเคลื่อนไหวเปลี่ยนเป็นการเรียนรู้</span></div>
+    </div>
+
+    <div class="location">
+      <b>สถานที่:</b> พื้นที่วังหมี อำเภอวังน้ำเขียว จังหวัดนครราชสีมา <span class="tbd">รอยืนยันพิกัด</span>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><b>RUN</b><span>MOVE — เดิน วิ่ง สำรวจ และออกจากชีวิตเดิม</span></div>
+      <div class="pillar"><b>LEARN</b><span>DISCOVER — เรียนจากต้นไม้ ดิน แมลง ผู้คน และประสบการณ์</span></div>
+      <div class="pillar"><b>LAND</b><span>BELONG — เชื่อมโยงกับพื้นที่ ธรรมชาติ ชุมชน และวัฒนธรรม</span></div>
+    </div>
+
+    <h3 class="journey-title">Journey Experience ของผู้ร่วมงาน — 5 ขั้น</h3>
+    <div class="journey">
+      <div class="j-step"><div class="step-no">01 · Arrive</div><p>ฉันมาถึงโลกของ Wang Mi</p></div>
+      <div class="j-step"><div class="step-no">02 · Discover</div><p>ฉันค้นพบธรรมชาติและวังหมี</p></div>
+      <div class="j-step"><div class="step-no">03 · Play &amp; Connect</div><p>ฉันทำกิจกรรมกับครอบครัวและผู้คน</p></div>
+      <div class="j-step"><div class="step-no">04 · Achieve</div><p>ฉันพิชิตบางอย่าง</p></div>
+      <div class="j-step"><div class="step-no">05 · Leave a Legacy</div><p>ฉันทิ้งบางอย่างที่ดีไว้ให้อนาคต — Legacy Wall</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="routes">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Routes</span>
+        <h2>ระยะกิจกรรม</h2>
+      </div>
+      <p>โครงสร้างด้านล่างเป็นเวอร์ชันพร้อมใช้สำหรับวางระบบสมัคร โดยควรยืนยันระยะจริงอีกครั้งหลังสำรวจและทดสอบเส้นทาง</p>
+    </div>
+    <div class="route-grid">
+      <div class="route"><small>Family Discovery</small><strong>3 KM</strong><p>เดิน–วิ่งสำหรับเด็ก ครอบครัว และผู้เริ่มต้น เน้นภารกิจเรียนรู้ระหว่างทาง</p></div>
+      <div class="route"><small>Nature Trail</small><strong>5 KM</strong><p>เส้นทางธรรมชาติระยะสั้น เหมาะกับผู้เริ่มวิ่งเทรลและครอบครัวที่พร้อมผจญภัย</p></div>
+      <div class="route"><small>Adventure Trail</small><strong>10 KM</strong><p>เส้นทางที่เพิ่มความท้าทายและการสำรวจภูมิประเทศอย่างจริงจังขึ้น</p></div>
+      <div class="route"><small>Explorer Trail</small><strong>15 KM</strong><p>ระยะยาวสุดของงาน สำหรับผู้มีประสบการณ์และเตรียมร่างกายมาอย่างเหมาะสม</p></div>
+    </div>
+    <p class="route-note"><span class="tbd">รอยืนยัน</span> ระยะจริงทั้งหมดจะยืนยันอีกครั้งหลังทีมลงพื้นที่สำรวจเส้นทาง (ดูงานค้าง "ลงพื้นที่สำรวจเส้นทางครั้งแรก")</p>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Packages</span>
+        <h2>แพ็กเกจและสิ่งที่ได้รับ</h2>
+      </div>
+      <p>รายการจริงควรล็อกพร้อมงบประมาณและกำหนดวันผลิตก่อนประกาศขาย</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3>Race Essentials</h3>
+        <ul>
+          <li>Bib หรือหมายเลขผู้เข้าร่วม</li>
+          <li>ระบบบันทึกเวลา/Tracking ตามระยะ</li>
+          <li>ประกันอุบัติเหตุ</li>
+          <li>จุดน้ำและปฐมพยาบาล</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Event Kit</h3>
+        <ul>
+          <li>เสื้อที่ระลึก</li>
+          <li>เหรียญผู้พิชิต</li>
+          <li>Digital Certificate</li>
+          <li>ของที่ระลึก <span class="tbd">รอยืนยัน</span></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Learning Experience</h3>
+        <ul>
+          <li>Nature Passport</li>
+          <li>Learning Checkpoint</li>
+          <li>Family Mission</li>
+          <li>Community Experience</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="registration">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Registration</span>
+        <h2>ขั้นตอนการสมัคร</h2>
+      </div>
+      <p>Flow ที่ออกแบบให้สอดคล้องกับระบบรับสมัครงานวิ่งมาตรฐานและลดปัญหาข้อมูลไม่ครบหรือชำระเงินไม่สมบูรณ์</p>
+    </div>
+    <div class="cards">
+      <article class="card"><h3>01 เลือกกิจกรรม</h3><p>เลือกระยะ ประเภทผู้สมัคร แพ็กเกจเสื้อ และบริการจัดส่งหรือรับด้วยตนเอง</p></article>
+      <article class="card"><h3>02 กรอกข้อมูล</h3><p>กรอกข้อมูลส่วนบุคคล วันเกิด ติดต่อฉุกเฉิน ข้อมูลสุขภาพ และข้อมูลที่ใช้ทำประกัน</p></article>
+      <article class="card"><h3>03 ตรวจสอบ</h3><p>ตรวจชื่อ ระยะ ขนาดเสื้อ ยอดชำระ และอ่านเงื่อนไขทั้งหมดก่อนยืนยัน</p></article>
+      <article class="card"><h3>04 ชำระเงิน</h3><p>เลือกช่องทางชำระเงินและเก็บหลักฐานไว้จนกว่าสถานะจะยืนยันสำเร็จ</p></article>
+      <article class="card"><h3>05 รับการยืนยัน</h3><p>ระบบส่งเลขสมัครและรายละเอียดการรับอุปกรณ์ผ่านอีเมลหรือช่องทางที่กำหนด</p></article>
+      <article class="card"><h3>06 เตรียมตัว</h3><p>ติดตาม Race Guide อุปกรณ์บังคับ สภาพอากาศ แผนที่ และเวลา Check-in ก่อนวันงาน</p></article>
+    </div>
+  </div>
+</section>
+
 <section id="tasks">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Action Items</div>
-      <h2>งานค้าง — ต้องเสร็จก่อนประชุมรอบหน้า</h2>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Action Items</span>
+        <h2>งานค้าง — ต้องเสร็จก่อนประชุมรอบหน้า</h2>
+      </div>
       <p>จาก meeting note 05 &amp; 11 ก.ค.: รอบหน้าทุกฝ่าย present พร้อมงบ ระบุว่าเป็น ยืม / ขอสปอนเซอร์ / ซื้อ (คน-งาน-เงิน)</p>
     </div>
 
@@ -485,14 +953,14 @@
         <div class="task-body">
           <b>ปลูกมันม่วง</b>
           <p>ใช้เวลา 4 เดือนเก็บผลผลิต — ต้องปลูกภายใน ~ส.ค. ถึงจะทันจำหน่าย+แปรรูปในงาน ธ.ค.</p>
-          <div class="task-meta"><span class="tag owner">ฟาร์ม</span><span class="tag due">ภายใน ส.ค. 69</span></div>
+          <div class="task-meta"><span class="tag owner">รอมอบหมาย</span><span class="tag due">ภายใน ส.ค. 69</span></div>
         </div>
       </div>
       <div class="task"><span class="dot warn"></span>
         <div class="task-body">
           <b>ปรับพื้นที่รองรับงาน</b>
           <p>ลานจอดรถ · ลานกางเต็นท์ · ปรับปรุงห้องน้ำ บ้านไม้ โรงเก็บของ · ย้ายคอกวัว-คอกแพะ รองรับกิจกรรมให้อาหาร/นม</p>
-          <div class="task-meta"><span class="tag owner">ฝ่ายปฏิบัติการ</span></div>
+          <div class="task-meta"><span class="tag owner">รอมอบหมาย</span></div>
         </div>
       </div>
       <div class="task"><span class="dot good"></span>
@@ -507,10 +975,12 @@
 </section>
 
 <section id="depts">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Teams</div>
-      <h2>ฝ่ายงานทั้ง 12 ฝ่าย</h2>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Teams</span>
+        <h2>ฝ่ายงานทั้ง 12 ฝ่าย</h2>
+      </div>
       <p>กดที่ "การบ้าน" ในแต่ละการ์ดเพื่อดูรายละเอียดงานและคำถามที่ฝ่ายต้องตอบให้ได้</p>
     </div>
 
@@ -528,7 +998,7 @@
             <li>ธีมแต่ละช่วงเส้นทาง + วิเคราะห์ระดับความยาก</li>
             <li>เวลาที่เหมาะสม: วิ่งเช้า / กลางคืน / Sunrise / Sunset</li>
             <li>สำรวจจริง: เทรล 15 กม. + ศึกษาธรรมชาติ 5 กม. · จุดน้ำ-พยาบาล-checkpoint รวมจุดเดียวกัน ทุก 3-4 กม.</li>
-            <li>บทบาทวันงาน: Pacer คุมเวลา / Stopper ปิดท้าย / Runner</li>
+            <li>บทบาท: Pacer คุมเวลา / Stopper ปิดท้าย / Runner</li>
           </ul>
         </details>
         <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>ทำไมเส้นทางนี้ต่างจากงาน Trail อื่น</li><li>จุด WOW คืออะไร</li><li>นักวิ่งจะ "รู้สึกอะไร" หลังจบงาน</li></ul></div>
@@ -639,7 +1109,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>สิ่งแวดล้อม + คาร์บอนเครดิต</h3></div>
+        <div class="dept-head"><h3>สิ่งแวดล้อมและความยั่งยืน + คาร์บอนเครดิต</h3></div>
         <div class="people"><span class="who">Head: มิกซ์</span><span class="who member">เหลียน</span><span class="who member">ล่า</span></div>
         <p class="dept-goal">ต้นแบบ <em>Green Trail Event</em> — เป้า carbon = 0</p>
         <details>
@@ -725,11 +1195,18 @@
 </section>
 
 <section id="finance">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Finance</div>
-      <h2>แผนการเงิน</h2>
-      <p>ตัวเลขจากที่ประชุม 11 ก.ค. 2569 — เป้ารายรับรวม 2,659,800 บาท เทียบรายจ่าย 851,000 บาท</p>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Finance</span>
+        <h2>แผนการเงิน</h2>
+      </div>
+      <p>ตัวเลขจากที่ประชุม 11 ก.ค. 2569 — เป้ารายรับรวม 2,659,800 บาท (คำนวณรวมจากช่องทางรายรับ) เทียบรายจ่าย 851,000 บาท</p>
+    </div>
+
+    <div class="notice fin-notice">
+      <h3>รายรับ 2,659,800 / รายจ่าย 851,000 บาท</h3>
+      <p><strong>ประเด็นเปิดที่บล็อกการเปิดรับสมัคร:</strong> ยังไม่เคาะบัญชีรับเงินของ event — การระดมทุนต้องไม่ใช้บัญชีส่วนบุคคล และมีกฎหมายระดมทุนเกี่ยวข้อง ต้องรู้ว่าตอนรับสมัครใช้บัญชีไหนและออกบิลยังไง (ติดตามจากแกนกลาง)</p>
     </div>
 
     <div class="fin-grid">
@@ -748,25 +1225,25 @@
 
       <div class="card">
         <h3>รายรับบัตรวิ่ง — เป้า 1,449,800 บาท</h3>
-        <div class="table-scroll">
+        <div class="table-wrap">
           <table>
             <thead><tr><th>ประเภท</th><th class="num">ราคา</th><th class="num">จำนวน</th><th class="num">รวม (บาท)</th></tr></thead>
             <tbody>
               <tr><td>VVIP</td><td class="num">5,000</td><td class="num">100</td><td class="num">500,000</td></tr>
               <tr><td>VIP</td><td class="num">3,000</td><td class="num">200</td><td class="num">600,000</td></tr>
-              <tr><td>ทั่วไป <span style="color:var(--ink-3)">(มี Early bird)</span></td><td class="num">1,500</td><td class="num">300</td><td class="num">450,000</td></tr>
-              <tr><td>คนใน <span style="color:var(--ink-3)">(มาเป็นกลุ่ม)</span></td><td class="num">999</td><td class="num">200</td><td class="num">199,800</td></tr>
+              <tr><td>ทั่วไป <span class="td-soft">(มี Early bird)</span></td><td class="num">1,500</td><td class="num">300</td><td class="num">450,000</td></tr>
+              <tr><td>คนใน <span class="td-soft">(มาเป็นกลุ่ม)</span></td><td class="num">999</td><td class="num">200</td><td class="num">199,800</td></tr>
               <tr class="total"><td>รวมบัตรวิ่ง</td><td></td><td class="num">800</td><td class="num">1,449,800</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="table-scroll" style="margin-top:16px;">
+        <div class="table-wrap" style="margin-top:16px;">
           <table>
             <thead><tr><th>รายรับอื่น</th><th class="num">รวม (บาท)</th></tr></thead>
             <tbody>
               <tr><td>เส้นทางศึกษาธรรมชาติ — 777/คน × 300 (3 คนขึ้นไป เหลือ 700)</td><td class="num">210,000</td></tr>
               <tr><td>Sponsor (เป้าหมาย)</td><td class="num">1,000,000</td></tr>
-              <tr><td colspan="2" style="color:var(--ink-3); font-size:0.8rem;">+ ยังไม่ตีมูลค่า: บัตร workshop · ลานกางเต็นท์ · Night Festival (?) · อาหารและผลิตภัณฑ์ฟาร์ม · เลข BIB สวยราคาพิเศษ/บริจาค</td></tr>
+              <tr><td colspan="2" class="td-soft">+ ยังไม่ตีมูลค่า: บัตร workshop · ลานกางเต็นท์ · Night Festival (?) · อาหารและผลิตภัณฑ์ฟาร์ม · เลข BIB สวยราคาพิเศษ/บริจาค</td></tr>
               <tr class="total"><td>เป้ารายรับรวมทั้งงาน</td><td class="num">2,659,800</td></tr>
             </tbody>
           </table>
@@ -776,11 +1253,100 @@
   </div>
 </section>
 
+<section id="impact">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Impact</span>
+        <h2>Impact Transparency</h2>
+      </div>
+      <p>ควรประกาศสัดส่วนการใช้เงินหลังล็อกงบประมาณ เพื่อสร้างความเชื่อมั่นว่ารายได้จากการสมัครถูกเปลี่ยนเป็นผลลัพธ์ของพื้นที่จริง</p>
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:640px;">
+        <thead><tr><th>ด้านการใช้เงิน</th><th>ผลลัพธ์ที่คาดหวัง</th><th>สถานะข้อมูล</th></tr></thead>
+        <tbody>
+          <tr><td>ศูนย์การเรียนรู้ธรรมชาติ</td><td>โครงสร้างพื้นฐาน ฐานเรียนรู้ และพื้นที่กิจกรรมสำหรับเด็กและครอบครัว</td><td><span class="tbd">รอยืนยันสัดส่วน</span></td></tr>
+          <tr><td>ฟื้นฟูและดูแลพื้นที่</td><td>ลดผลกระทบจากกิจกรรมและสนับสนุนการฟื้นฟูระบบนิเวศ</td><td><span class="tbd">รอยืนยันสัดส่วน</span></td></tr>
+          <tr><td>กิจกรรมเยาวชนและชุมชน</td><td>การเรียนรู้ธรรมชาติ อาสาสมัคร และประสบการณ์ชุมชน</td><td><span class="tbd">รอยืนยันสัดส่วน</span></td></tr>
+          <tr><td>ต้นทุนการจัดงาน</td><td>ความปลอดภัย ระบบรับสมัคร การผลิต และปฏิบัติการ</td><td><span class="tbd">รอยืนยันสัดส่วน</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="safety-code">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Safety &amp; Code</span>
+        <h2>ความปลอดภัย &amp; Nature Code</h2>
+      </div>
+      <p>Trail Safety ต้องถูกออกแบบจากสภาพพื้นที่จริง การทดสอบเส้นทาง และแผนกู้ภัย — ส่วนกติกาฉบับเต็ม 10 ข้อ + PDPA อยู่ในร่างหน้ารับสมัคร (ดูที่ไฟล์และแหล่งข้อมูล)</p>
+    </div>
+
+    <div class="notice" style="margin-bottom:18px;">
+      <h3>ผู้เข้าร่วมต้องรับทราบความเสี่ยงของพื้นที่ธรรมชาติ</h3>
+      <p>เส้นทางอาจมีพื้นลื่น ความลาดชัน โคลน รากไม้ กิ่งไม้ แมลง สัตว์ป่า อุณหภูมิสูง ฝน และทัศนวิสัยต่ำ ผู้เข้าร่วมต้องประเมินสภาพร่างกาย เตรียมอุปกรณ์ และหยุดกิจกรรมเมื่อมีอาการผิดปกติ</p>
+    </div>
+
+    <div class="cards" style="margin-bottom:18px;">
+      <article class="card"><h3>Medical</h3><p>จุดแพทย์ ทีมกู้ชีพ การส่งต่อโรงพยาบาล และข้อมูลผู้ติดต่อฉุกเฉินต้องพร้อมใช้งาน</p></article>
+      <article class="card"><h3>Weather</h3><p>ผู้จัดมีสิทธิ์ปรับเส้นทาง เวลา Cut-off หรือยุติกิจกรรมเมื่อสภาพอากาศไม่ปลอดภัย</p></article>
+      <article class="card"><h3>Mandatory Gear</h3><p>รายการอุปกรณ์บังคับของแต่ละระยะ เช่น น้ำ นกหวีด โทรศัพท์ และไฟฉาย จะประกาศใน Race Guide ฉบับสุดท้าย</p></article>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Leave No Trace</h3>
+        <ul>
+          <li>ไม่ทิ้งขยะ</li>
+          <li>ไม่เก็บพืชหรือสัตว์</li>
+          <li>ไม่ออกนอกเส้นทาง</li>
+          <li>ไม่ทำลายพื้นที่ธรรมชาติ</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Refill &amp; Reuse</h3>
+        <ul>
+          <li>พกขวดหรือแก้วส่วนตัว</li>
+          <li>ลดพลาสติกใช้ครั้งเดียว</li>
+          <li>ใช้จุดเติมน้ำ</li>
+          <li>คัดแยกขยะตามระบบงาน</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Respect Local Life</h3>
+        <ul>
+          <li>เคารพชุมชนและพื้นที่ส่วนบุคคล</li>
+          <li>ลดเสียงรบกวน</li>
+          <li>สนับสนุนอาหารและผลิตภัณฑ์ท้องถิ่น</li>
+          <li>ปฏิบัติตามคำแนะนำเจ้าของพื้นที่</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container pledge">
+    <span class="eyebrow">Nature Pledge</span>
+    <blockquote>
+      "ฉันจะเคลื่อนไหวด้วยความเคารพ ไม่ทิ้งขยะ ไม่ทำลายธรรมชาติ
+      เคารพชุมชนและผู้ร่วมกิจกรรม และร่วมส่งต่อผืนดินแห่งการเรียนรู้นี้ให้คนรุ่นต่อไป"
+    </blockquote>
+  </div>
+</section>
+
 <section id="meetings">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Meetings</div>
-      <h2>ไทม์ไลน์การประชุม</h2>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Meetings</span>
+        <h2>ไทม์ไลน์การประชุม</h2>
+      </div>
+      <p>บันทึกจากที่ประชุมทุกรอบ — อัปเดตตามสไลด์ต้นทาง</p>
     </div>
     <div class="timeline">
       <div class="t-item">
@@ -791,7 +1357,7 @@
       <div class="t-item">
         <div class="t-date">05 ก.ค. 2569</div>
         <h3>แจกการบ้าน + วาง Positioning</h3>
-        <p>ทุกฝ่ายได้เป้าหมายและการบ้านชัดเจน · การตลาดเสนอ positioning "Family Nature Trail Festival" + concept "Trail of the Future" · เคาะชื่องาน "วังหมีกระทิง Run Learn Land" เอา Run นำเพราะระดมทุนจากการวิ่ง · อนุมัติแผนสำรวจเส้นทาง งบ 5,000 บาท</p>
+        <p>ทุกฝ่ายได้เป้าหมายและการบ้านชัดเจน · การตลาดเสนอ positioning "Family Nature Trail Festival" + concept "Trail of the Future" · เคาะชื่องาน "วังหมีกระทิง Run Learn Land" เอา Run นำเพราะระดมทุนจากการวิ่ง · สรุปงบสำรวจเส้นทาง 5,000 บาท (พี่ต้าให้ยืมเงินสำรวจ)</p>
       </div>
       <div class="t-item">
         <div class="t-date">11 ก.ค. 2569</div>
@@ -804,14 +1370,45 @@
         <p>แต่ละฝ่ายนำเสนองบ ระบุ ยืม / ขอสปอนเซอร์ / ซื้อ ตาม template คน-งาน-เงิน · ทีมพี่กิ๊กเสนอ tagline · ติดตามเรื่องบัญชีเงินจากแกนกลาง</p>
       </div>
     </div>
+
+    <div class="cta">
+      <div>
+        <h3>ประชุมรอบหน้า — ทุกฝ่าย present งบประมาณ</h3>
+        <p>ระบุ ยืม / ขอสปอนเซอร์ / ซื้อ ตาม template คน-งาน-เงิน · เตรียมให้พร้อมก่อนวันประชุม</p>
+      </div>
+      <a class="btn" href="https://docs.google.com/presentation/d/1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4/edit" target="_blank" rel="noopener">เปิดสไลด์ต้นทาง ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">FAQ</span>
+        <h2>คำถามที่พบบ่อย</h2>
+      </div>
+      <p>ปรับคำตอบตามข้อมูลจริงก่อนเปิดรับสมัคร โดยเฉพาะวันงาน ราคา การจัดส่ง และนโยบายโอนสิทธิ์</p>
+    </div>
+    <div class="accordion">
+      <details><summary>ไม่เคยวิ่งเทรลสามารถสมัครได้ไหม?</summary><p>ได้ โดยควรเลือกระยะที่เหมาะกับประสบการณ์ เริ่มจาก Family Discovery หรือ Nature Trail และฝึกเดิน–วิ่งบนพื้นต่างระดับก่อนวันงาน</p></details>
+      <details><summary>เด็กเข้าร่วมได้หรือไม่?</summary><p>ได้ตามช่วงอายุและเงื่อนไขของแต่ละระยะ เด็กเล็กต้องมีผู้ปกครองร่วมกิจกรรมตลอดเส้นทาง</p></details>
+      <details><summary>สามารถเดินแทนวิ่งได้ไหม?</summary><p>ได้ หากยังอยู่ภายในเวลาที่กำหนดและปฏิบัติตามกติกาของระยะนั้น</p></details>
+      <details><summary>มีบริการจัดส่งอุปกรณ์หรือไม่?</summary><p><span class="tbd">รอยืนยันรูปแบบ ค่าจัดส่ง และพื้นที่ให้บริการ</span></p></details>
+      <details><summary>ต้องใช้ใบรับรองแพทย์หรือไม่?</summary><p><span class="tbd">รอยืนยันตามระยะ อายุ และเงื่อนไขประกันภัย</span></p></details>
+      <details><summary>เงินค่าสมัครนำไปใช้ทำอะไร?</summary><p>รายได้สุทธิของโครงการมีเป้าหมายเพื่อพัฒนาศูนย์การเรียนรู้ธรรมชาติและกิจกรรมเชื่อมโยงเด็ก ครอบครัว ชุมชน และพื้นที่ โดยผู้จัดควรเผยแพร่รายงานผลหลังงาน</p></details>
+    </div>
   </div>
 </section>
 
 <section id="files">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Files &amp; Links</div>
-      <h2>ไฟล์และแหล่งข้อมูล</h2>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Files &amp; Links</span>
+        <h2>ไฟล์และแหล่งข้อมูล</h2>
+      </div>
+      <p>เอกสารหลักและไฟล์ทำงานของทีม — สไลด์ต้นทางคือ source of truth เสมอ</p>
     </div>
     <div class="file-grid">
       <a class="file-card" href="https://docs.google.com/presentation/d/1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4/edit" target="_blank" rel="noopener">
@@ -819,6 +1416,11 @@
         <b>สไลด์ประชุมโปรเจกต์ ↗</b>
         <p>เอกสารหลักของทีม — meeting log ทุกครั้ง อัปเดตต่อเนื่อง</p>
       </a>
+      <div class="file-card">
+        <div class="kind">Draft · registration</div>
+        <b>ร่างหน้ารับสมัคร (กติกา 10 ข้อ + PDPA)</b>
+        <p>หน้าเว็บรับสมัครฉบับร่าง — ข้อกำหนดผู้สมัครครบ 10 ข้อ, PDPA, ความปลอดภัย และ FAQ ฉบับเต็ม รอตรวจโดยฝ่ายกฎหมายก่อนเผยแพร่จริง (ไฟล์อยู่กับทีม ยังไม่เผยแพร่)</p>
+      </div>
       <div class="file-card">
         <div class="kind">Local · snapshot</div>
         <b>slides-content.md</b>
@@ -839,7 +1441,7 @@
 </section>
 
 <footer>
-  <div class="wrap">
+  <div class="container">
     <span>ข้อมูลจากสไลด์ประชุม อัปเดตล่าสุด 11 ก.ค. 2569 · หน้านี้สรุปเมื่อ 15 ก.ค. 2569</span>
     <span>วังหมีกระทิง Run Learn Land · Trail of the Future</span>
   </div>

@@ -75,6 +75,8 @@
 - Influencer/Partner, Viral idea, Community ก่อนวันงาน (Training run / Online challenge)
 - วิเคราะห์คู่แข่งและจุดแตกต่าง
 
+คำถาม: ทำไมคนต้องเลือกงานนี้ / คนจะถ่ายอะไร แชร์อะไร
+
 **Positioning (เสนอโดยกวาง)**: **Family Nature Trail Festival**
 - ไม่ position เป็นแค่งานวิ่งเทรล — ถ้าแข่งด้วยระยะ/เหรียญจะถูกเทียบกับงานอื่นทันที
 - ใช้การวิ่งเป็นประตูพาครอบครัว-เด็กกลับมาเชื่อมโยงธรรมชาติ → สร้างพื้นที่เรียนรู้ธรรมชาติระยะยาว
@@ -133,6 +135,8 @@
 **เป้าหมาย**: ต้นแบบ "Green Trail Event" + คำนวณ CFP ของ event
 - Zero Waste, คัดแยกขยะ, ลด single-use plastic, ระบบ refill, วัสดุย่อยสลายได้
 - ลด carbon footprint, carbon offset/credit, ฟื้นฟูธรรมชาติหลังงาน, guideline นักวิ่ง, sustainability KPI, วิธีเก็บข้อมูล-คำนวณ carbon emission
+
+คำถาม: งานจะไม่ทำร้ายธรรมชาติอย่างไร / เราจะวัดผลความยั่งยืนยังไง / Carbon Emission ของกิจกรรม
 
 **Green coach guideline**:
 - อาหารท้องถิ่น: วัตถุดิบ 80% จากท้องถิ่น, ตัวเลือกพิเศษ (อิสลาม/มัง), สื่อสาร information
