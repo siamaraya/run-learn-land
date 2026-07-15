@@ -1,4 +1,7 @@
 # private — มีอีเมลส่วนตัวใน Code.gs ห้าม push ขึ้น repo public
 apps-script/
 
+# สำเนา artifact (base64 ฝังรูป) — generate จาก index.html ไม่ต้องเข้า repo
+dashboard.html
+
 .DS_Store
