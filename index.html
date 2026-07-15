@@ -1,0 +1,851 @@
+<title>วังหมีกระทิง Run Learn Land — Project Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #EFEEE3;
+    --bg-glow-a: rgba(198, 123, 31, 0.14);
+    --bg-glow-b: rgba(62, 107, 74, 0.16);
+    --ink: #22301F;
+    --ink-2: #5A6753;
+    --ink-3: #83907C;
+    --card: rgba(34, 48, 31, 0.055);
+    --card-strong: rgba(34, 48, 31, 0.09);
+    --glass-nav: rgba(239, 238, 227, 0.78);
+    --accent: #B36F15;
+    --accent-soft: rgba(179, 111, 21, 0.14);
+    --fern: #3E6B4A;
+    --fern-soft: rgba(62, 107, 74, 0.14);
+    --good: #3E7D52;
+    --good-soft: rgba(62, 125, 82, 0.15);
+    --warn: #A06B10;
+    --warn-soft: rgba(160, 107, 16, 0.15);
+    --crit: #A94436;
+    --crit-soft: rgba(169, 68, 54, 0.13);
+    --shadow: 0 10px 30px rgba(30, 42, 28, 0.13);
+    --shadow-soft: 0 4px 14px rgba(30, 42, 28, 0.09);
+    --bar-track: rgba(34, 48, 31, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121B14;
+      --bg-glow-a: rgba(229, 164, 60, 0.10);
+      --bg-glow-b: rgba(127, 168, 139, 0.10);
+      --ink: #E9EDE2;
+      --ink-2: #A5B29E;
+      --ink-3: #76836F;
+      --card: rgba(233, 237, 226, 0.055);
+      --card-strong: rgba(233, 237, 226, 0.10);
+      --glass-nav: rgba(18, 27, 20, 0.72);
+      --accent: #E5A43C;
+      --accent-soft: rgba(229, 164, 60, 0.16);
+      --fern: #7FA88B;
+      --fern-soft: rgba(127, 168, 139, 0.16);
+      --good: #6FBE87;
+      --good-soft: rgba(111, 190, 135, 0.16);
+      --warn: #DFA742;
+      --warn-soft: rgba(223, 167, 66, 0.16);
+      --crit: #E07A6B;
+      --crit-soft: rgba(224, 122, 107, 0.15);
+      --shadow: 0 12px 34px rgba(0, 0, 0, 0.38);
+      --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.28);
+      --bar-track: rgba(233, 237, 226, 0.09);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121B14;
+    --bg-glow-a: rgba(229, 164, 60, 0.10);
+    --bg-glow-b: rgba(127, 168, 139, 0.10);
+    --ink: #E9EDE2;
+    --ink-2: #A5B29E;
+    --ink-3: #76836F;
+    --card: rgba(233, 237, 226, 0.055);
+    --card-strong: rgba(233, 237, 226, 0.10);
+    --glass-nav: rgba(18, 27, 20, 0.72);
+    --accent: #E5A43C;
+    --accent-soft: rgba(229, 164, 60, 0.16);
+    --fern: #7FA88B;
+    --fern-soft: rgba(127, 168, 139, 0.16);
+    --good: #6FBE87;
+    --good-soft: rgba(111, 190, 135, 0.16);
+    --warn: #DFA742;
+    --warn-soft: rgba(223, 167, 66, 0.16);
+    --crit: #E07A6B;
+    --crit-soft: rgba(224, 122, 107, 0.15);
+    --shadow: 0 12px 34px rgba(0, 0, 0, 0.38);
+    --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.28);
+    --bar-track: rgba(233, 237, 226, 0.09);
+  }
+  :root[data-theme="light"] {
+    --bg: #EFEEE3;
+    --bg-glow-a: rgba(198, 123, 31, 0.14);
+    --bg-glow-b: rgba(62, 107, 74, 0.16);
+    --ink: #22301F;
+    --ink-2: #5A6753;
+    --ink-3: #83907C;
+    --card: rgba(34, 48, 31, 0.055);
+    --card-strong: rgba(34, 48, 31, 0.09);
+    --glass-nav: rgba(239, 238, 227, 0.78);
+    --accent: #B36F15;
+    --accent-soft: rgba(179, 111, 21, 0.14);
+    --fern: #3E6B4A;
+    --fern-soft: rgba(62, 107, 74, 0.14);
+    --good: #3E7D52;
+    --good-soft: rgba(62, 125, 82, 0.15);
+    --warn: #A06B10;
+    --warn-soft: rgba(160, 107, 16, 0.15);
+    --crit: #A94436;
+    --crit-soft: rgba(169, 68, 54, 0.13);
+    --shadow: 0 10px 30px rgba(30, 42, 28, 0.13);
+    --shadow-soft: 0 4px 14px rgba(30, 42, 28, 0.09);
+    --bar-track: rgba(34, 48, 31, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0;
+    font-family: "Sukhumvit Set", "Thonburi", "Leelawadee UI", "Noto Sans Thai", -apple-system, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(900px 520px at 85% -5%, var(--bg-glow-a), transparent 65%),
+      radial-gradient(1100px 640px at -10% 30%, var(--bg-glow-b), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--glass-nav);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-soft);
+  }
+  .nav-inner {
+    max-width: 1060px; margin: 0 auto; padding: 10px 20px;
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  }
+  .nav-brand { font-weight: 800; font-size: 0.95rem; letter-spacing: 0.01em; }
+  .nav-brand small { color: var(--accent); font-weight: 700; }
+  .nav-links { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+  .nav-links a {
+    color: var(--ink-2); font-size: 0.85rem; font-weight: 600;
+    padding: 5px 11px; border-radius: 999px;
+  }
+  .nav-links a:hover { background: var(--card-strong); color: var(--ink); text-decoration: none; }
+
+  /* ---------- hero ---------- */
+  header.hero { padding: 64px 0 40px; }
+  .eyebrow {
+    font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  h1 {
+    font-size: clamp(2rem, 5.4vw, 3.3rem);
+    font-weight: 800; line-height: 1.15; margin: 10px 0 6px;
+    text-wrap: balance; letter-spacing: -0.015em;
+  }
+  .hero-sub { color: var(--ink-2); font-size: 1.05rem; max-width: 40rem; margin: 0 0 20px; }
+  .hero-quote {
+    margin: 22px 0; padding: 18px 22px; max-width: 34rem;
+    background: var(--card); border-radius: 18px;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-soft);
+    font-size: 1.12rem; font-weight: 600; line-height: 1.55; text-wrap: balance;
+  }
+  .hero-quote span { color: var(--accent); }
+  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 26px; }
+  .chip {
+    font-size: 0.82rem; font-weight: 600; padding: 5px 13px; border-radius: 999px;
+    background: var(--fern-soft); color: var(--fern);
+  }
+  .chip.amber { background: var(--accent-soft); color: var(--accent); }
+
+  .countdown { display: flex; gap: 12px; flex-wrap: wrap; align-items: stretch; }
+  .cd-tile {
+    min-width: 86px; padding: 14px 16px; text-align: center;
+    background: var(--card); border-radius: 16px;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-soft);
+  }
+  .cd-tile b {
+    display: block; font-size: 1.9rem; font-weight: 800;
+    font-variant-numeric: tabular-nums; line-height: 1.1; color: var(--accent);
+  }
+  .cd-tile small { color: var(--ink-3); font-size: 0.76rem; font-weight: 600; }
+  .hero-cta { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 10px 20px; border-radius: 999px;
+    font-weight: 700; font-size: 0.9rem;
+    background: var(--accent); color: var(--bg);
+    box-shadow: var(--shadow-soft); transition: transform 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); text-decoration: none; }
+  .btn.ghost { background: var(--card-strong); color: var(--ink); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+  /* ---------- sections ---------- */
+  section { padding: 36px 0; }
+  .sec-head { margin-bottom: 22px; }
+  .sec-head .eyebrow { color: var(--fern); }
+  h2 { font-size: 1.5rem; font-weight: 800; margin: 6px 0 4px; letter-spacing: -0.01em; }
+  .sec-head p { color: var(--ink-2); margin: 0; max-width: 44rem; }
+  h3 { font-size: 1.02rem; font-weight: 700; margin: 0 0 6px; }
+
+  .card {
+    background: var(--card); border-radius: 18px; padding: 20px 22px;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--shadow);
+  }
+
+  /* stat tiles */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+  .stat b {
+    display: block; font-size: 1.55rem; font-weight: 800;
+    font-variant-numeric: tabular-nums; letter-spacing: -0.01em; line-height: 1.2;
+  }
+  .stat b.amber { color: var(--accent); }
+  .stat b.green { color: var(--fern); }
+  .stat small { color: var(--ink-2); font-size: 0.83rem; font-weight: 600; }
+  .stat .note { display: block; color: var(--ink-3); font-size: 0.76rem; margin-top: 4px; }
+
+  /* journey */
+  .journey { display: flex; gap: 10px; flex-wrap: wrap; }
+  .j-step {
+    flex: 1 1 160px; padding: 16px 18px; border-radius: 16px;
+    background: var(--card); box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .j-step .eyebrow { color: var(--accent); letter-spacing: 0.12em; }
+  .j-step p { margin: 4px 0 0; font-size: 0.88rem; color: var(--ink-2); }
+
+  /* tasks */
+  .task-list { display: flex; flex-direction: column; gap: 10px; }
+  .task {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--card); border-radius: 16px; padding: 14px 18px;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-soft);
+  }
+  .task .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; margin-top: 8px; }
+  .dot.warn { background: var(--warn); }
+  .dot.good { background: var(--good); }
+  .dot.crit { background: var(--crit); }
+  .task-body { flex: 1; min-width: 0; }
+  .task-body b { font-size: 0.95rem; }
+  .task-body p { margin: 2px 0 0; color: var(--ink-2); font-size: 0.85rem; }
+  .task-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .tag {
+    font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+    background: var(--card-strong); color: var(--ink-2);
+  }
+  .tag.owner { background: var(--fern-soft); color: var(--fern); }
+  .tag.due { background: var(--warn-soft); color: var(--warn); }
+  .tag.done { background: var(--good-soft); color: var(--good); }
+  .tag.risk { background: var(--crit-soft); color: var(--crit); }
+
+  /* departments */
+  .dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .dept {
+    background: var(--card); border-radius: 18px; padding: 20px 22px;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .dept-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .dept-head h3 { flex: 1 1 auto; min-width: 0; }
+  .dept-goal { font-size: 0.88rem; color: var(--ink-2); margin: 0; }
+  .dept-goal em { color: var(--accent); font-style: normal; font-weight: 700; }
+  .people { display: flex; gap: 6px; flex-wrap: wrap; }
+  .who { font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+  .who.member { background: var(--card-strong); color: var(--ink-2); font-weight: 600; }
+  details { margin-top: 2px; }
+  summary {
+    cursor: pointer; font-size: 0.83rem; font-weight: 700; color: var(--fern);
+    list-style: none; display: flex; align-items: center; gap: 6px; user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▸"; transition: transform 0.15s ease; font-size: 0.75rem; }
+  details[open] summary::before { transform: rotate(90deg); }
+  details ul { margin: 8px 0 4px; padding-left: 20px; font-size: 0.85rem; color: var(--ink-2); }
+  details li { margin: 3px 0; }
+  .q-block {
+    margin-top: 8px; padding: 10px 14px; border-radius: 12px;
+    background: var(--accent-soft); font-size: 0.83rem; color: var(--ink-2);
+  }
+  .q-block b { color: var(--accent); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; display: block; margin-bottom: 3px; }
+  .q-block ul { margin: 0; padding-left: 18px; }
+
+  /* finance */
+  .fin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; align-items: start; }
+  .bar-row { display: grid; grid-template-columns: 9.5rem 1fr 5.5rem; gap: 10px; align-items: center; margin: 9px 0; font-size: 0.85rem; }
+  .bar-row .lbl { color: var(--ink-2); font-weight: 600; text-align: right; }
+  .bar-track { background: var(--bar-track); border-radius: 999px; height: 14px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; background: var(--fern); }
+  .bar-fill.amber { background: var(--accent); }
+  .bar-row .val { font-variant-numeric: tabular-nums; font-weight: 700; text-align: right; }
+  .fin-note { font-size: 0.78rem; color: var(--ink-3); margin-top: 10px; }
+  .fin-note strong { color: var(--warn); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th { text-align: left; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); padding: 6px 8px; font-weight: 700; }
+  td { padding: 8px; border-top: 1px solid var(--bar-track); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.total td { font-weight: 800; color: var(--accent); }
+  .table-scroll { overflow-x: auto; }
+
+  /* timeline */
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px;
+    width: 2px; background: var(--bar-track); border-radius: 2px;
+  }
+  .t-item { position: relative; padding: 0 0 26px; }
+  .t-item::before {
+    content: ""; position: absolute; left: -25px; top: 8px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--fern); box-shadow: 0 0 0 4px var(--fern-soft);
+  }
+  .t-item.next::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .t-date { font-size: 0.78rem; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; }
+  .t-item h3 { margin: 3px 0 4px; }
+  .t-item p { margin: 0; color: var(--ink-2); font-size: 0.88rem; max-width: 42rem; }
+
+  /* files */
+  .file-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+  .file-card {
+    background: var(--card); border-radius: 16px; padding: 16px 18px;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-soft); display: block; color: var(--ink);
+    transition: transform 0.15s ease;
+  }
+  .file-card:hover { transform: translateY(-2px); text-decoration: none; }
+  .file-card .kind { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .file-card b { display: block; margin: 4px 0 2px; font-size: 0.95rem; }
+  .file-card p { margin: 0; font-size: 0.8rem; color: var(--ink-2); }
+
+  footer { padding: 40px 0 60px; color: var(--ink-3); font-size: 0.8rem; }
+  footer .wrap { display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+</style>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">วังหมีกระทิง <small>Run Learn Land</small></div>
+    <div class="nav-links">
+      <a href="#overview">ภาพรวม</a>
+      <a href="#tasks">งานค้าง</a>
+      <a href="#depts">ฝ่ายงาน</a>
+      <a href="#finance">การเงิน</a>
+      <a href="#meetings">ประชุม</a>
+      <a href="#files">ไฟล์</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Wang Mi × Krating · Family Nature Trail Festival</div>
+    <h1>วังหมีกระทิง Run Learn Land</h1>
+    <p class="hero-sub">25–27 ธันวาคม 2569 · ศูนย์รวมข้อมูลโปรเจกต์สำหรับทีมงานทั้ง 12 ฝ่าย — สรุปจาก Google Slides ประชุมล่าสุด</p>
+
+    <div class="hero-quote">
+      "เส้นทางนี้<span>ยังสร้างไม่เสร็จ</span><br>เพราะเรากำลังสร้างมันไปด้วยกัน"
+      <div style="font-size:0.78rem; font-weight:600; color:var(--ink-3); margin-top:6px;">— Concept: WANG MI · TRAIL OF THE FUTURE</div>
+    </div>
+
+    <div class="chip-row">
+      <span class="chip amber">Run นำ — ระดมทุนจากการวิ่ง</span>
+      <span class="chip">เทรล 15 กม.</span>
+      <span class="chip">เส้นศึกษาธรรมชาติ 5 กม.</span>
+      <span class="chip">Target: Family · นักวิ่งเทรล · Creator สายธรรมชาติ</span>
+    </div>
+
+    <div class="countdown" id="countdown" aria-label="นับถอยหลังถึงวันงาน">
+      <div class="cd-tile"><b id="cd-d">—</b><small>วัน</small></div>
+      <div class="cd-tile"><b id="cd-h">—</b><small>ชั่วโมง</small></div>
+      <div class="cd-tile"><b id="cd-m">—</b><small>นาที</small></div>
+      <div class="cd-tile"><b id="cd-s">—</b><small>วินาที</small></div>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn" href="https://docs.google.com/presentation/d/1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4/edit" target="_blank" rel="noopener">เปิดสไลด์ต้นทาง ↗</a>
+      <a class="btn ghost" href="#tasks">ดูงานค้างก่อนประชุมหน้า</a>
+    </div>
+  </div>
+</header>
+
+<section id="overview">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Overview</div>
+      <h2>ภาพรวมโปรเจกต์</h2>
+      <p>งานนี้ไม่ position เป็นงานวิ่งเทรลธรรมดา — ใช้การวิ่งเป็นประตูพาครอบครัวและเด็กกลับมาเชื่อมโยงกับธรรมชาติ และเปลี่ยนการวิ่งหนึ่งครั้งให้เกิดพื้นที่เรียนรู้ธรรมชาติระยะยาว</p>
+    </div>
+
+    <div class="stats">
+      <div class="card stat"><b class="amber">25–27 ธ.ค.</b><small>วันจัดงาน (2569)</small><span class="note">3 วัน 2 คืน ที่วังหมี กระทิง</span></div>
+      <div class="card stat"><b class="green">2,659,800</b><small>เป้ารายรับรวม (บาท)</small><span class="note">บัตรวิ่ง + เส้นทางธรรมชาติ + sponsor</span></div>
+      <div class="card stat"><b>851,000</b><small>ประมาณการรายจ่าย (บาท)</small><span class="note">8 หมวดหลัก — ดูรายละเอียดด้านล่าง</span></div>
+      <div class="card stat"><b class="green">1,100</b><small>เป้าผู้เข้าร่วม (คน)</small><span class="note">นักวิ่ง 800 + เส้นทางธรรมชาติ 300</span></div>
+      <div class="card stat"><b class="amber">12 ฝ่าย</b><small>โครงสร้างทีมงาน</small><span class="note">Pre-event → Event</span></div>
+    </div>
+
+    <div style="margin-top:26px;">
+      <h3 style="margin-bottom:12px; color:var(--ink-2); font-size:0.9rem;">Journey Experience ของผู้ร่วมงาน — 5 ขั้น</h3>
+      <div class="journey">
+        <div class="j-step"><div class="eyebrow">01 · Arrive</div><p>ฉันมาถึงโลกของ Wang Mi</p></div>
+        <div class="j-step"><div class="eyebrow">02 · Discover</div><p>ฉันค้นพบธรรมชาติและวังหมี</p></div>
+        <div class="j-step"><div class="eyebrow">03 · Play &amp; Connect</div><p>ฉันทำกิจกรรมกับครอบครัวและผู้คน</p></div>
+        <div class="j-step"><div class="eyebrow">04 · Achieve</div><p>ฉันพิชิตบางอย่าง</p></div>
+        <div class="j-step"><div class="eyebrow">05 · Leave a Legacy</div><p>ฉันทิ้งบางอย่างที่ดีไว้ให้อนาคต — Legacy Wall</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tasks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Action Items</div>
+      <h2>งานค้าง — ต้องเสร็จก่อนประชุมรอบหน้า</h2>
+      <p>จาก meeting note 05 &amp; 11 ก.ค.: รอบหน้าทุกฝ่าย present พร้อมงบ ระบุว่าเป็น ยืม / ขอสปอนเซอร์ / ซื้อ (คน-งาน-เงิน)</p>
+    </div>
+
+    <div class="task-list">
+      <div class="task"><span class="dot warn"></span>
+        <div class="task-body">
+          <b>ทุกฝ่าย: เตรียมงบประมาณ present รอบหน้า</b>
+          <p>ใช้ template คน-งาน-เงิน ระบุที่มาของทรัพยากร: ยืม / สปอนเซอร์ / ซื้อ</p>
+          <div class="task-meta"><span class="tag owner">ทุกฝ่าย</span><span class="tag due">ประชุมรอบหน้า</span></div>
+        </div>
+      </div>
+      <div class="task"><span class="dot warn"></span>
+        <div class="task-body">
+          <b>Tagline ของงาน</b>
+          <p>คิดและนำเสนอในการประชุมครั้งต่อไป — ต่อยอดจาก positioning "Family Nature Trail Festival"</p>
+          <div class="task-meta"><span class="tag owner">ทีมพี่กิ๊ก</span><span class="tag due">ประชุมรอบหน้า</span></div>
+        </div>
+      </div>
+      <div class="task"><span class="dot warn"></span>
+        <div class="task-body">
+          <b>มาสคอตของงาน</b>
+          <p>วาดขึ้นเองโดยทีม — เวลาขายต้องเป็น "หมี-กระทิง"</p>
+          <div class="task-meta"><span class="tag owner">อิง</span></div>
+        </div>
+      </div>
+      <div class="task"><span class="dot crit"></span>
+        <div class="task-body">
+          <b>เคาะเรื่องบัญชีเงินของ event</b>
+          <p>event ระดมทุนต้องไม่ใช้บัญชีส่วนบุคคล · ถ้าจะระดมทุนมีกฎหมายระดมทุนเกี่ยวข้อง · ต้องรู้ว่าตอนรับสมัครใช้บัญชีไหน ออกบิลยังไง</p>
+          <div class="task-meta"><span class="tag owner">แกนกลาง</span><span class="tag risk">บล็อกการเปิดรับสมัคร</span></div>
+        </div>
+      </div>
+      <div class="task"><span class="dot warn"></span>
+        <div class="task-body">
+          <b>ลงพื้นที่สำรวจเส้นทางครั้งแรก</b>
+          <p>2 วัน 1 คืน (นอนเต็นท์) — ปักจุดเด่นธรรมชาติ จุดเสี่ยง จุดถ่ายรูป ก่อนฝ่าย event จะออกแบบต่อได้ · งบ 5,000 บาท (พี่ต้าให้ยืมเงินสำรวจ)</p>
+          <div class="task-meta"><span class="tag owner">จอย ทัช มี่ หนุ่ย พร นัน อิง</span><span class="tag risk">งานอื่นรอฝ่ายนี้</span></div>
+        </div>
+      </div>
+      <div class="task"><span class="dot warn"></span>
+        <div class="task-body">
+          <b>ปลูกมันม่วง</b>
+          <p>ใช้เวลา 4 เดือนเก็บผลผลิต — ต้องปลูกภายใน ~ส.ค. ถึงจะทันจำหน่าย+แปรรูปในงาน ธ.ค.</p>
+          <div class="task-meta"><span class="tag owner">ฟาร์ม</span><span class="tag due">ภายใน ส.ค. 69</span></div>
+        </div>
+      </div>
+      <div class="task"><span class="dot warn"></span>
+        <div class="task-body">
+          <b>ปรับพื้นที่รองรับงาน</b>
+          <p>ลานจอดรถ · ลานกางเต็นท์ · ปรับปรุงห้องน้ำ บ้านไม้ โรงเก็บของ · ย้ายคอกวัว-คอกแพะ รองรับกิจกรรมให้อาหาร/นม</p>
+          <div class="task-meta"><span class="tag owner">ฝ่ายปฏิบัติการ</span></div>
+        </div>
+      </div>
+      <div class="task"><span class="dot good"></span>
+        <div class="task-body">
+          <b>เชิญผู้ใหญ่ / ผู้ว่าราชการจังหวัด</b>
+          <p>อาจารย์รู้จักผู้ว่า — ประสานผ่านอาจารย์</p>
+          <div class="task-meta"><span class="tag owner">อาจารย์</span><span class="tag done">มีช่องทางแล้ว</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="depts">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Teams</div>
+      <h2>ฝ่ายงานทั้ง 12 ฝ่าย</h2>
+      <p>กดที่ "การบ้าน" ในแต่ละการ์ดเพื่อดูรายละเอียดงานและคำถามที่ฝ่ายต้องตอบให้ได้</p>
+    </div>
+
+    <div class="dept-grid">
+
+      <div class="dept">
+        <div class="dept-head"><h3>ออกแบบเส้นทางธรรมชาติ</h3></div>
+        <div class="people"><span class="who">Head: มี่</span><span class="who member">นัน</span><span class="who member">อิง</span><span class="who member">พร</span><span class="who member">หนุ่ย</span><span class="who member">ปรอ</span></div>
+        <p class="dept-goal">เส้นทางที่ <em>สนุก ปลอดภัย มีเรื่องราว และได้เรียนรู้ธรรมชาติ</em></p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>Mapping จุดเด่น: จุดวิว / จุดเรียนรู้ / จุดพัก / จุดถ่ายรูป / จุดเสี่ยง</li>
+            <li>กิจกรรมระหว่างทาง: Nature checkpoint · ภารกิจ · Sound installation · Storytelling station</li>
+            <li>ธีมแต่ละช่วงเส้นทาง + วิเคราะห์ระดับความยาก</li>
+            <li>เวลาที่เหมาะสม: วิ่งเช้า / กลางคืน / Sunrise / Sunset</li>
+            <li>สำรวจจริง: เทรล 15 กม. + ศึกษาธรรมชาติ 5 กม. · จุดน้ำ-พยาบาล-checkpoint รวมจุดเดียวกัน ทุก 3-4 กม.</li>
+            <li>บทบาทวันงาน: Pacer คุมเวลา / Stopper ปิดท้าย / Runner</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>ทำไมเส้นทางนี้ต่างจากงาน Trail อื่น</li><li>จุด WOW คืออะไร</li><li>นักวิ่งจะ "รู้สึกอะไร" หลังจบงาน</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>กิจกรรมและ Event</h3></div>
+        <div class="people"><span class="who">Head: มน</span><span class="who member">กิ๊ก</span><span class="who member">หญิง</span><span class="who member">ไลล่า</span><span class="who member">เบนซ์</span></div>
+        <p class="dept-goal">สร้าง <em>Festival Experience</em> ไม่ใช่แค่งานแข่งขัน</p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>Theme งาน + Timeline กิจกรรม 2-3 วัน + Concept เส้นทาง</li>
+            <li>ระยะวิ่งเบื้องต้น: Fun Run / 10K / 25K / Ultra</li>
+            <li>กิจกรรมเสริม: ดนตรีสด · Acoustic campfire · Workshop ธรรมชาติ · Stargazing · Yoga · Local food market · Outdoor cinema</li>
+            <li>Opening / Closing Experience · โซนครอบครัวและเด็ก</li>
+            <li>ระบบสะสม badge / mission / passport</li>
+            <li>ประสบการณ์กลางคืน: Night walk / Glow trail / Silent disco</li>
+            <li>รอทีมเส้นทางปักจุดก่อน แล้วค่อยออกแบบ event บนเส้นทาง</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>ถ้าคนไม่วิ่ง จะยังอยากมางานไหม</li><li>อะไรคือ "Moment ที่คนจะจำ"</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>การตลาดและการสื่อสาร</h3></div>
+        <div class="people"><span class="who">Head: กวาง</span><span class="who member">กิ๊ก</span><span class="who member">อิง</span></div>
+        <p class="dept-goal">ทำให้งาน <em>มีตัวตนชัด</em> และคนอยากพูดถึง</p>
+        <details>
+          <summary>การบ้าน + แนวทางที่วางแล้ว</summary>
+          <ul>
+            <li>Positioning: <b>Family Nature Trail Festival</b> — ไม่แข่งด้วยระยะ/เหรียญ</li>
+            <li>สูตร Content: 40% Story · 30% Experience · 20% Community · 10% Direct Sales</li>
+            <li>Visual: เด็ก ครอบครัว เท้าบนดิน มือสัมผัสต้นไม้ แสงเช้า หมอก — ไม่ทำภาพวิ่ง Hardcore</li>
+            <li>น้ำเสียง: คนชวนกันออกไปค้นพบธรรมชาติ ไม่ใช่ organizer ประกาศแข่ง</li>
+            <li>แผน content 3 เดือนก่อนงาน · FB / IG / TikTok / running &amp; outdoor community</li>
+            <li>Community ก่อนงาน: Training run · Online challenge</li>
+            <li>Circular Infrastructure: วัสดุ Gate (ไม้ ผ้า เชือก) ไปสร้างศูนย์เรียนรู้หลังงาน</li>
+            <li>Legacy Wall + แผนที่วังหมี 3×5 ม. (เด็กติด sticker "ฉันอยากเห็นอะไรเกิดขึ้นที่นี่")</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>ทำไมคนต้องเลือกงานนี้</li><li>คนจะถ่ายอะไร แชร์อะไร</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>ระดมทุนและสปอนเซอร์</h3></div>
+        <div class="people"><span class="who">Head: ปรอ</span><span class="who member">กอล์ฟ</span><span class="who member">เหลียน</span></div>
+        <p class="dept-goal">หาพาร์ตเนอร์ที่ <em>เข้ากับจิตวิญญาณงาน</em> — เป้า 1,000,000 บาท</p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>ประเภท sponsor: Outdoor · Energy drink · รถยนต์ · Camping · Sustainability · Health &amp; wellness</li>
+            <li>Package: Title / Main / Activity sponsor + สิทธิประโยชน์</li>
+            <li>Activation ที่ sponsor ทำได้ในงาน + วิเคราะห์มูลค่าที่ได้รับ</li>
+            <li>รายชื่อ sponsor เป้าหมาย + pitch idea เบื้องต้น</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>งานสร้างคุณค่าอะไรให้ sponsor</li><li>Sponsor จะ "ดูดี" ยังไงเมื่ออยู่ในงานนี้</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>ชุมชนและผู้มีส่วนได้ส่วนเสีย</h3></div>
+        <div class="people"><span class="who">Head: พี่ปุ๋ย</span><span class="who">Head: ทัช</span></div>
+        <p class="dept-goal">ให้งาน <em>เติบโตไปกับพื้นที่</em></p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>ระบุ stakeholder: ชุมชน · หน่วยงานรัฐ · อุทยาน · ผู้ประกอบการ · เจ้าของพื้นที่</li>
+            <li>วิธีสร้างประโยชน์ให้ชุมชน + การมีส่วนร่วมของคนท้องถิ่น</li>
+            <li>Local experience + ร้านค้า/อาหารท้องถิ่น</li>
+            <li>วิเคราะห์ผลกระทบ + แผนสื่อสารกับชุมชน</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>ชุมชนได้อะไรจากงานนี้</li><li>ทำยังไงให้งานถูกยอมรับระยะยาว</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>ปฏิบัติการและโลจิสติกส์</h3></div>
+        <div class="people"><span class="who">Head: พี่ปุ๋ย</span><span class="who">Head: หนุ่ย</span><span class="who member">สม</span><span class="who member">ที</span></div>
+        <p class="dept-goal">ทำให้งาน <em>ไหลลื่น</em> และจัดการได้จริง</p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>Flow งานทั้งหมด + layout พื้นที่</li>
+            <li>การเดินทาง · parking / shuttle · น้ำ / ไฟ / ห้องน้ำ</li>
+            <li>Registration · bag drop · จุดปล่อยตัว / finish</li>
+            <li>แผนจัดการคนจำนวนมาก + วิเคราะห์ bottleneck</li>
+            <li>ปรับพื้นที่: ลานจอด ลานเต็นท์ ห้องน้ำ บ้านไม้ โรงเก็บของ ย้ายคอกวัว-แพะ</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>จุดไหนเสี่ยง chaos</li><li>ถ้าฝนตกจะทำอย่างไร</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>ความปลอดภัยและการแพทย์</h3></div>
+        <div class="people"><span class="who">Head: เก่ง</span></div>
+        <p class="dept-goal">ลดความเสี่ยงสูงสุด <em>พร้อมทุกสถานการณ์</em></p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>วิเคราะห์ความเสี่ยง + จุดอันตรายบนเส้นทาง</li>
+            <li>แผน emergency · ระบบสื่อสาร · medical station · evacuation</li>
+            <li>แผนรับมืออากาศ + สัตว์ป่า</li>
+            <li>ระบบ tracking นักวิ่ง + ประเมินจำนวนทีมแพทย์/กู้ภัย</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>Worst case scenario คืออะไร</li><li>ใช้เวลากู้ภัยนานแค่ไหน</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>สิ่งแวดล้อม + คาร์บอนเครดิต</h3></div>
+        <div class="people"><span class="who">Head: มิกซ์</span><span class="who member">เหลียน</span><span class="who member">ล่า</span></div>
+        <p class="dept-goal">ต้นแบบ <em>Green Trail Event</em> — เป้า carbon = 0</p>
+        <details>
+          <summary>การบ้าน + Green coach guideline</summary>
+          <ul>
+            <li>Zero Waste: คัดแยกขยะ · ลด single-use plastic · ระบบ refill · วัสดุย่อยสลายได้</li>
+            <li>คำนวณ CFP ของ event: ก่อน / ระหว่าง / หลังงาน — เลือกของมี carbon tag</li>
+            <li>จุดมัดจำ-คืนขยะ + policy ค่ามัดจำขยะพลาสติก</li>
+            <li>วัตถุดิบอาหาร 80% จากท้องถิ่น · ตัวเลือกอิสลาม/มังสวิรัติ</li>
+            <li>บริจาค 10% ให้องค์กรความยั่งยืนของชุมชน</li>
+            <li>Carbon offset / credit + ฟื้นฟูธรรมชาติหลังงาน + sustainability KPI</li>
+            <li>ฐานเรียนรู้แยกขยะ · อนุรักษ์ความหลากหลายทางชีวภาพ · วัฒนธรรมท้องถิ่นเป็นกรอบ event</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>งานจะไม่ทำร้ายธรรมชาติอย่างไร</li><li>วัดผลความยั่งยืนยังไง · Carbon emission เท่าไร</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>การเงินและบัญชี</h3></div>
+        <div class="people"><span class="who">Head: นีย์</span><span class="who member">พร</span></div>
+        <p class="dept-goal">ควบคุมต้นทุน <em>ยั่งยืนทางการเงิน</em></p>
+        <details>
+          <summary>การบ้าน + ประเด็นเปิด</summary>
+          <ul>
+            <li>ประมาณการรายรับ-รายจ่าย · แยก fixed / variable cost · จุดคุ้มทุน</li>
+            <li>Pricing strategy · จำนวนผู้เข้าร่วมที่เหมาะสม · cash flow timeline</li>
+            <li>ความเสี่ยงทางการเงิน + contingency budget</li>
+            <li>⚠ ใครดูแลเงิน — ต้องถามแกนกลาง · ห้ามใช้บัญชีส่วนบุคคล</li>
+            <li>⚠ ถ้าระดมทุน → มีกฎหมายระดมทุนเกี่ยวข้อง · ต้องเคาะบัญชีรับสมัคร + วิธีออกบิล</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>งานต้องมีคนขั้นต่ำเท่าไร</li><li>จุดที่งบบานปลายคืออะไร</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>กฎหมายและเอกสาร</h3></div>
+        <div class="people"><span class="who">Head: ขวัญ</span><span class="who">Head: เต้ย</span></div>
+        <p class="dept-goal">ถูกต้องตามกฎหมาย <em>ลดความเสี่ยง</em></p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>ใบอนุญาต + เอกสารหน่วยงานรัฐ + ข้อกำหนดพื้นที่ธรรมชาติ</li>
+            <li>ประกันภัย · Waiver นักวิ่ง · สัญญาสปอนเซอร์ / ผู้รับจ้าง</li>
+            <li>PDPA / การใช้ภาพ · ข้อจำกัดด้านเสียง-เวลา</li>
+            <li>เชิญผู้ใหญ่: อาจารย์รู้จักผู้ว่า</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>เรื่องไหนเสี่ยงผิดกฎหมายที่สุด</li><li>ต้องขออนุญาตล่วงหน้านานเท่าไร</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>อาสาสมัครและบุคลากร</h3></div>
+        <div class="people"><span class="who">Head: ช็อคชิพ</span><span class="who">Head: ล่า</span></div>
+        <p class="dept-goal">ทีมงานที่ <em>มีพลังและเข้าใจงาน</em></p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>ประเมินจำนวนคน + แบ่ง role หน้าที่ (Natural Route ใช้ 3 คน)</li>
+            <li>ระบบ training · briefing · สื่อสารภายใน</li>
+            <li>สิทธิประโยชน์ volunteer + ระบบดูแลทีม + แผนจัดกะ + motivation</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>ทำยังไงให้ volunteer อยากกลับมาช่วยอีก</li><li>จุดไหนต้องใช้คนเก่งพิเศษ</li></ul></div>
+      </div>
+
+      <div class="dept">
+        <div class="dept-head"><h3>สรุปผลและประเมินผล</h3></div>
+        <div class="people"><span class="who">Head: จอย</span></div>
+        <p class="dept-goal">วัดผลเพื่อ <em>พัฒนางานระยะยาว</em></p>
+        <details>
+          <summary>การบ้าน</summary>
+          <ul>
+            <li>กำหนด KPI ของงาน + ระบบ survey / feedback</li>
+            <li>วัดผล 4 ด้าน: เศรษฐกิจ · ชุมชน · สิ่งแวดล้อม · branding/social media</li>
+            <li>สรุปบทเรียนหลังงาน + รูปแบบ report</li>
+          </ul>
+        </details>
+        <div class="q-block"><b>ต้องตอบให้ได้</b><ul><li>งานสำเร็จเพราะอะไร</li><li>ปีหน้าควรพัฒนาอะไร</li></ul></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="finance">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Finance</div>
+      <h2>แผนการเงิน</h2>
+      <p>ตัวเลขจากที่ประชุม 11 ก.ค. 2569 — เป้ารายรับรวม 2,659,800 บาท เทียบรายจ่าย 851,000 บาท</p>
+    </div>
+
+    <div class="fin-grid">
+      <div class="card">
+        <h3>รายจ่ายโดยประมาณ — 851,000 บาท</h3>
+        <div class="bar-row"><span class="lbl">Event</span><div class="bar-track"><div class="bar-fill amber" style="width:100%"></div></div><span class="val">450,000</span></div>
+        <div class="bar-row"><span class="lbl">สิ่งแวดล้อม</span><div class="bar-track"><div class="bar-fill" style="width:27%"></div></div><span class="val">120,000</span></div>
+        <div class="bar-row"><span class="lbl">บริหารกลาง</span><div class="bar-track"><div class="bar-fill" style="width:19%"></div></div><span class="val">85,000</span></div>
+        <div class="bar-row"><span class="lbl">Staff</span><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><span class="val">50,000</span></div>
+        <div class="bar-row"><span class="lbl">Nature Route</span><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><span class="val">50,000</span></div>
+        <div class="bar-row"><span class="lbl">ห้องน้ำ/สุขา</span><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><span class="val">50,000*</span></div>
+        <div class="bar-row"><span class="lbl">Security</span><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div><span class="val">36,000</span></div>
+        <div class="bar-row"><span class="lbl">VIP</span><div class="bar-track"><div class="bar-fill" style="width:2.2%"></div></div><span class="val">10,000</span></div>
+        <p class="fin-note"><strong>*หมายเหตุ:</strong> สไลด์ต้นทางพิมพ์ "550,000 (ส้วม)" แต่ยอดรวม 851,000 จะถูกต้องก็ต่อเมื่อรายการนี้เท่ากับ 50,000 — น่าจะพิมพ์เลข 5 เกิน ต้องยืนยันกับฝ่ายการเงิน</p>
+      </div>
+
+      <div class="card">
+        <h3>รายรับบัตรวิ่ง — เป้า 1,449,800 บาท</h3>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>ประเภท</th><th class="num">ราคา</th><th class="num">จำนวน</th><th class="num">รวม (บาท)</th></tr></thead>
+            <tbody>
+              <tr><td>VVIP</td><td class="num">5,000</td><td class="num">100</td><td class="num">500,000</td></tr>
+              <tr><td>VIP</td><td class="num">3,000</td><td class="num">200</td><td class="num">600,000</td></tr>
+              <tr><td>ทั่วไป <span style="color:var(--ink-3)">(มี Early bird)</span></td><td class="num">1,500</td><td class="num">300</td><td class="num">450,000</td></tr>
+              <tr><td>คนใน <span style="color:var(--ink-3)">(มาเป็นกลุ่ม)</span></td><td class="num">999</td><td class="num">200</td><td class="num">199,800</td></tr>
+              <tr class="total"><td>รวมบัตรวิ่ง</td><td></td><td class="num">800</td><td class="num">1,449,800</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-scroll" style="margin-top:16px;">
+          <table>
+            <thead><tr><th>รายรับอื่น</th><th class="num">รวม (บาท)</th></tr></thead>
+            <tbody>
+              <tr><td>เส้นทางศึกษาธรรมชาติ — 777/คน × 300 (3 คนขึ้นไป เหลือ 700)</td><td class="num">210,000</td></tr>
+              <tr><td>Sponsor (เป้าหมาย)</td><td class="num">1,000,000</td></tr>
+              <tr><td colspan="2" style="color:var(--ink-3); font-size:0.8rem;">+ ยังไม่ตีมูลค่า: บัตร workshop · ลานกางเต็นท์ · Night Festival (?) · อาหารและผลิตภัณฑ์ฟาร์ม · เลข BIB สวยราคาพิเศษ/บริจาค</td></tr>
+              <tr class="total"><td>เป้ารายรับรวมทั้งงาน</td><td class="num">2,659,800</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="meetings">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Meetings</div>
+      <h2>ไทม์ไลน์การประชุม</h2>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">01 ก.ค. 2569</div>
+        <h3>วางโครงสร้างทีม</h3>
+        <p>ตั้งโครงสร้างการทำงาน 12 ฝ่าย (Pre-event → Event) พร้อมกำหนด Head และสมาชิกแต่ละฝ่าย</p>
+      </div>
+      <div class="t-item">
+        <div class="t-date">05 ก.ค. 2569</div>
+        <h3>แจกการบ้าน + วาง Positioning</h3>
+        <p>ทุกฝ่ายได้เป้าหมายและการบ้านชัดเจน · การตลาดเสนอ positioning "Family Nature Trail Festival" + concept "Trail of the Future" · เคาะชื่องาน "วังหมีกระทิง Run Learn Land" เอา Run นำเพราะระดมทุนจากการวิ่ง · อนุมัติแผนสำรวจเส้นทาง งบ 5,000 บาท</p>
+      </div>
+      <div class="t-item">
+        <div class="t-date">11 ก.ค. 2569</div>
+        <h3>เคาะวันจัดงาน + แผนการเงิน</h3>
+        <p>กำหนดวันงาน 25-27 ธ.ค. 2569 · เคาะ target group · วางประมาณการรายจ่าย 851,000 และช่องทางรายรับ · วางแผนปรับพื้นที่ + ปลูกมันม่วง</p>
+      </div>
+      <div class="t-item next">
+        <div class="t-date">ประชุมรอบหน้า</div>
+        <h3>ทุกฝ่าย present งบประมาณ</h3>
+        <p>แต่ละฝ่ายนำเสนองบ ระบุ ยืม / ขอสปอนเซอร์ / ซื้อ ตาม template คน-งาน-เงิน · ทีมพี่กิ๊กเสนอ tagline · ติดตามเรื่องบัญชีเงินจากแกนกลาง</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="files">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Files &amp; Links</div>
+      <h2>ไฟล์และแหล่งข้อมูล</h2>
+    </div>
+    <div class="file-grid">
+      <a class="file-card" href="https://docs.google.com/presentation/d/1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4/edit" target="_blank" rel="noopener">
+        <div class="kind">Google Slides · ต้นทาง</div>
+        <b>สไลด์ประชุมโปรเจกต์ ↗</b>
+        <p>เอกสารหลักของทีม — meeting log ทุกครั้ง อัปเดตต่อเนื่อง</p>
+      </a>
+      <div class="file-card">
+        <div class="kind">Local · snapshot</div>
+        <b>slides-content.md</b>
+        <p>สรุปเนื้อหาสไลด์ทั้งหมดแบบจัดโครงสร้าง (ดึง 15 ก.ค. 69) — อยู่ในโฟลเดอร์โปรเจกต์ "RUN LEARN LAND"</p>
+      </div>
+      <div class="file-card">
+        <div class="kind">Automation · watcher</div>
+        <b>apps-script/Code.gs</b>
+        <p>ระบบเฝ้าสไลด์ทุก 5 นาที ส่งอีเมล diff เมื่อมีแก้ไข — ติดตั้งตาม SETUP.md ในโฟลเดอร์เดียวกัน</p>
+      </div>
+      <a class="file-card" href="https://www.facebook.com/watch/?v=1265662142399393" target="_blank" rel="noopener">
+        <div class="kind">Reference · video</div>
+        <b>คลิปอ้างอิงจากที่ประชุม ↗</b>
+        <p>วิดีโอ Facebook ที่แนบไว้ใน meeting note 11 ก.ค.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>ข้อมูลจากสไลด์ประชุม อัปเดตล่าสุด 11 ก.ค. 2569 · หน้านี้สรุปเมื่อ 15 ก.ค. 2569</span>
+    <span>วังหมีกระทิง Run Learn Land · Trail of the Future</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var target = new Date("2026-12-25T06:00:00+07:00").getTime();
+    var el = {
+      d: document.getElementById("cd-d"),
+      h: document.getElementById("cd-h"),
+      m: document.getElementById("cd-m"),
+      s: document.getElementById("cd-s")
+    };
+    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+    function tick() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        el.d.textContent = "0"; el.h.textContent = "00"; el.m.textContent = "00"; el.s.textContent = "00";
+        return;
+      }
+      el.d.textContent = Math.floor(diff / 86400000);
+      el.h.textContent = pad(Math.floor(diff / 3600000) % 24);
+      el.m.textContent = pad(Math.floor(diff / 60000) % 60);
+      el.s.textContent = pad(Math.floor(diff / 1000) % 60);
+      setTimeout(tick, 1000);
+    }
+    tick();
+  })();
+</script>

@@ -1,0 +1,4 @@
+# private — มีอีเมลส่วนตัวใน Code.gs ห้าม push ขึ้น repo public
+apps-script/
+
+.DS_Store
