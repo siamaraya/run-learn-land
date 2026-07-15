@@ -1,0 +1,57 @@
+name: Sync slides to dashboard
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # ทุก 30 นาที (GitHub อาจหน่วงได้อีก 2-10 นาที)
+  workflow_dispatch: {} # กดรันมือได้จากแท็บ Actions
+  repository_dispatch: # เผื่ออนาคตต่อ webhook จาก Apps Script ให้สดกว่านี้
+    types: [slides-changed]
+
+concurrency:
+  group: sync-slides
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch slides text
+        id: fetch
+        run: |
+          curl -sL --fail --retry 3 \
+            "https://docs.google.com/presentation/d/1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4/export/txt" \
+            -o data/slides.txt
+          # กันกรณี Google ตอบ error page แทนเนื้อหา
+          test "$(wc -c < data/slides.txt)" -gt 1000
+          if git diff --quiet -- data/slides.txt; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No slide changes — skip."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git --no-pager diff --stat -- data/slides.txt
+          fi
+
+      - name: Update dashboard with Claude
+        if: steps.fetch.outputs.changed == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude -p "$(cat scripts/sync-prompt.md)" \
+            --permission-mode acceptEdits \
+            --allowedTools "Read,Edit,Write,Grep,Glob,Bash(git diff:*),Bash(git log:*)"
+
+      - name: Commit and push
+        if: steps.fetch.outputs.changed == 'true'
+        run: |
+          git config user.name "slides-sync-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/slides.txt index.html slides-content.md
+          git commit -m "Auto-sync dashboard from Google Slides"
+          git push
