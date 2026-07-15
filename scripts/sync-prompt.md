@@ -15,6 +15,10 @@ Run `git diff data/slides.txt` to see exactly what changed, then propagate those
 2. **`slides-content.md`** — the structured Thai summary. Append/update the matching meeting section so it stays a faithful, organized record of the slides.
 
 Hard rules:
+- The team sometimes updates figures in the hub AHEAD of the slides (marked "อัปเดต <date>" in
+  #finance / #overview, e.g. expense total 1,101,000 and venue "วิสาหกิจชุมชนนวัตกรรมเกษตรเวลเนสวังหมี"
+  updated 15 ก.ค. 2569). Do NOT revert such values to older slide figures — only change them when the
+  slide diff shows the slides catching up or explicitly revising them again.
 - Do NOT touch the CSS design system, the cover image block, the countdown script, or the overall layout. Content edits only.
 - Do NOT change the hero countdown target date unless the slides explicitly change the event date (currently 25–27 ธ.ค. 2569).
 - Keep everything in Thai matching the existing tone. Keep numbers as they appear in the slides; if slide numbers are internally inconsistent, keep the slide value and add a short warning note (pattern: the existing ส้วม 550,000 footnote).
