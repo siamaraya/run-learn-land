@@ -17,6 +17,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      HAS_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' || secrets.ANTHROPIC_API_KEY != '' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -36,8 +38,13 @@ jobs:
             git --no-pager diff --stat -- data/slides.txt
           fi
 
+      - name: Warn when no API key configured
+        if: steps.fetch.outputs.changed == 'true' && env.HAS_KEY != 'true'
+        run: |
+          echo "::warning::Slides changed but no CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY secret is set — dashboard NOT updated. Configure the secret or sync manually."
+
       - name: Update dashboard with Claude
-        if: steps.fetch.outputs.changed == 'true'
+        if: steps.fetch.outputs.changed == 'true' && env.HAS_KEY == 'true'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -48,7 +55,7 @@ jobs:
             --allowedTools "Read,Edit,Write,Grep,Glob,Bash(git diff:*),Bash(git log:*)"
 
       - name: Commit and push
-        if: steps.fetch.outputs.changed == 'true'
+        if: steps.fetch.outputs.changed == 'true' && env.HAS_KEY == 'true'
         run: |
           git config user.name "slides-sync-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
