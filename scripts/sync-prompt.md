@@ -20,7 +20,7 @@ Hard rules:
   updated 15 ก.ค. 2569). Do NOT revert such values to older slide figures — only change them when the
   slide diff shows the slides catching up or explicitly revising them again.
 - Do NOT touch the CSS design system, the cover image block, the countdown script, or the overall layout. Content edits only.
-- Do NOT change the hero countdown target date unless the slides explicitly change the event date (currently 25–27 ธ.ค. 2569).
+- Do NOT change the hero countdown target date unless the slides explicitly change the event date (confirmed by the team 16 ก.ค.: 26–27 ธ.ค. 2569 — treat this as newer than any slide still saying 25–27).
 - Keep everything in Thai matching the existing tone. Keep numbers as they appear in the slides; if slide numbers are internally inconsistent, keep the slide value and add a short warning note (pattern: the existing ส้วม 550,000 footnote).
 - If the diff is trivial (whitespace, reordering, typo fixes with no semantic change), update `slides-content.md` only if meaningful; otherwise make no edits at all.
 - Never add content that is not in the slides.

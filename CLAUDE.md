@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this repo is
 
 Static one-page project hub (Thai) for the "วังหมีกระทิง Run Learn Land" trail-festival event
-(25–27 ธ.ค. 2569), deployed on GitHub Pages from `main` root:
+(26–27 ธ.ค. 2569 — confirmed 16 Jul), deployed on GitHub Pages from `main` root:
 https://siamaraya.github.io/run-learn-land/ — no build step, no dependencies, no tests.
 All content originates from the team's Google Slides (public, presentation id
 `1XixIEtHMdWNPv9-A1-TIhnJgSiNk5z4JQ2BJKwCxIR4`), fetched as plain text via the
@@ -53,7 +53,7 @@ Google Slides ──export/txt──> data/slides.txt (baseline snapshot)
   owner/due tags), `#depts` (12 department cards with `<details>` homework), `#finance`
   (CSS bar chart + revenue tables, `tabular-nums`), `#meetings` (timeline; the amber
   `.t-item.next` is always the last "upcoming" entry), `#files`.
-- Hero countdown targets `2026-12-25T06:00:00+07:00` — change only if the slides change the
+- Hero countdown targets `2026-12-26T06:00:00+07:00` — change only if the slides change the
   event date.
 - Known data quirk: slides say "550,000 (ส้วม)" but the 851,000 expense total only works if
   it's 50,000 — keep the footnote pattern for any such inconsistency (keep the slide value,
