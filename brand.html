@@ -1,0 +1,390 @@
+<title>Mood & Tone — วังหมีกระทิง RUN LEARN LAND</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ทิศทางแบรนด์ Mood & Tone ของงานวังหมีกระทิง RUN LEARN LAND สำหรับทีมงานทุกฝ่าย">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --avocado: #9BAA36;
+    --forest: #202A1C;
+    --terracotta: #D46F35;
+    --mustard: #E3A72D;
+    --cream: #F4E7CF;
+    --soil: #654638;
+    --paper: #FFFDF8;
+    --muted: #66715E;
+    --border: rgba(32, 42, 28, 0.14);
+    --shadow: 0 20px 50px rgba(32, 42, 28, 0.12);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --max: 1080px;
+    --good-soft: rgba(155, 170, 54, 0.14);
+    --bad-soft: rgba(212, 111, 53, 0.12);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0;
+    color: var(--forest);
+    background:
+      radial-gradient(circle at 8% 0%, rgba(227, 167, 45, 0.14), transparent 24rem),
+      linear-gradient(180deg, #FFF9ED 0%, var(--paper) 42%, #F5F6EA 100%);
+    font-family: "Google Sans", "Noto Sans Thai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.72;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  a:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; border-radius: 6px; }
+  .container { width: min(calc(100% - 32px), var(--max)); margin-inline: auto; }
+  section { padding: 52px 0; scroll-margin-top: 90px; }
+  h1, h2, h3 { text-wrap: balance; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 253, 248, 0.84);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav { min-height: 64px; padding: 8px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 900; letter-spacing: -0.02em; }
+  .brand-mark { width: 40px; height: 40px; border-radius: 12px; object-fit: cover; border: 2px solid var(--forest); }
+  .back {
+    text-decoration: none; font-weight: 800; font-size: 14px;
+    padding: 10px 18px; border-radius: 999px; background: var(--forest); color: white; white-space: nowrap;
+  }
+
+  .hero { padding: 56px 0 20px; }
+  .eyebrow {
+    display: inline-flex; gap: 8px; align-items: center; padding: 8px 14px; border-radius: 999px;
+    background: rgba(155, 170, 54, 0.16); border: 1px solid rgba(155, 170, 54, 0.34);
+    font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  h1 { font-size: clamp(34px, 5.5vw, 62px); line-height: 1.02; letter-spacing: -0.045em; margin: 18px 0 10px; font-weight: 900; }
+  .hero p.sub { font-size: clamp(17px, 2vw, 20px); color: var(--muted); margin: 0; max-width: 640px; }
+
+  .essence {
+    margin-top: 30px; background: var(--forest); color: white;
+    border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow);
+    position: relative; overflow: hidden;
+  }
+  .essence::after {
+    content: "RUN • LEARN • LAND"; position: absolute; right: -20px; bottom: -14px;
+    font-size: clamp(40px, 7vw, 90px); font-weight: 900; opacity: 0.07; white-space: nowrap;
+  }
+  .essence b { display: block; font-size: clamp(22px, 3.2vw, 34px); line-height: 1.35; font-weight: 800; max-width: 760px; }
+  .essence p { color: rgba(255, 255, 255, 0.75); margin: 12px 0 0; max-width: 640px; }
+
+  .section-head { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 36px; align-items: start; margin-bottom: 26px; }
+  .section-head h2 { font-size: clamp(28px, 4vw, 42px); line-height: 1.05; letter-spacing: -0.035em; margin: 0; font-weight: 900; }
+  .section-head p { margin: 0; color: var(--muted); font-size: 17px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 14px; }
+  .card {
+    background: rgba(255, 255, 255, 0.78); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: 22px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 19px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+  .card .pct { display: block; font-size: 30px; font-weight: 900; color: var(--terracotta); margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+
+  /* palette */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 14px; }
+  .swatch { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); background: white; }
+  .swatch .chip { height: 96px; }
+  .swatch .meta { padding: 12px 14px; font-size: 13px; }
+  .swatch .meta b { display: block; font-size: 14.5px; }
+  .swatch .meta code { color: var(--muted); font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; }
+  .ratio-bar { display: flex; height: 40px; border-radius: 999px; overflow: hidden; margin-top: 20px; box-shadow: var(--shadow); }
+  .ratio-bar div { display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 800; color: white; }
+  .ratio-note { color: var(--muted); font-size: 13.5px; margin-top: 8px; }
+
+  /* voice do/don't */
+  .vs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 14px; }
+  .vs-col { border-radius: var(--radius-md); padding: 22px; border: 1px solid var(--border); }
+  .vs-col.good { background: var(--good-soft); }
+  .vs-col.bad { background: var(--bad-soft); }
+  .vs-col h3 { margin: 0 0 12px; font-size: 17px; }
+  .vs-col ul { margin: 0; padding-left: 0; list-style: none; }
+  .vs-col li {
+    background: rgba(255, 255, 255, 0.75); border-radius: 12px; padding: 12px 16px;
+    margin-bottom: 10px; font-size: 15px; line-height: 1.6;
+  }
+  .vs-col li:last-child { margin-bottom: 0; }
+
+  .rules { counter-reset: rule; }
+  .rules li { margin: 8px 0; font-size: 15.5px; }
+  .rules b { color: var(--forest); }
+
+  .word-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .word { padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+  .word.use { background: rgba(155, 170, 54, 0.18); color: #5F6E1B; }
+  .word.avoid { background: var(--bad-soft); color: #A84E1D; text-decoration: line-through; }
+
+  /* typography specimen */
+  .specimen { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px; }
+  .specimen .big { font-size: clamp(30px, 5vw, 54px); font-weight: 900; letter-spacing: -0.045em; line-height: 1.05; }
+  .specimen .body { max-width: 560px; color: var(--muted); margin-top: 14px; }
+  .specimen .label { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); margin: 20px 0 6px; }
+
+  /* taglines */
+  .tagline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 14px; }
+  .tagline {
+    background: var(--cream); border: 2px solid var(--forest); border-radius: 22px;
+    padding: 22px; font-weight: 800; font-size: 19px; line-height: 1.5; position: relative;
+  }
+  .tagline small { display: block; font-weight: 600; font-size: 13px; color: var(--soil); margin-top: 8px; }
+  .tagline.star { background: #F5E4A6; }
+  .tagline.star::before {
+    content: "แนะนำ"; position: absolute; top: -12px; right: 16px;
+    background: var(--terracotta); color: white; font-size: 12px; font-weight: 800;
+    padding: 3px 12px; border-radius: 999px;
+  }
+
+  /* channels table */
+  .table-wrap { overflow-x: auto; background: white; border: 1px solid var(--border); border-radius: var(--radius-md); }
+  table { width: 100%; border-collapse: collapse; min-width: 620px; font-size: 14.5px; }
+  th, td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+  th { background: var(--forest); color: white; font-size: 13px; }
+  tr:last-child td { border-bottom: 0; }
+
+  .check { background: white; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; }
+  .check ul { margin: 0; padding-left: 0; list-style: none; }
+  .check li { padding: 10px 0 10px 34px; position: relative; font-size: 15.5px; border-bottom: 1px dashed var(--border); }
+  .check li:last-child { border-bottom: 0; }
+  .check li::before { content: "☐"; position: absolute; left: 4px; color: var(--terracotta); font-size: 18px; }
+
+  footer { padding: 30px 0 60px; color: var(--muted); font-size: 13.5px; }
+
+  @media (max-width: 900px) {
+    .section-head { grid-template-columns: 1fr; gap: 12px; }
+  }
+  @media (max-width: 620px) {
+    section { padding: 40px 0; }
+    .essence { padding: 26px; }
+  }
+</style>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.jpg" alt="โลโก้วังหมีกระทิง RUN LEARN LAND">
+      <span>วังหมีกระทิง · Mood &amp; Tone</span>
+    </a>
+    <a class="back" href="index.html">← กลับหน้า Hub</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Brand Direction · ฝ่ายการตลาด · 16 ก.ค. 2569</span>
+      <h1>Mood &amp; Tone<br>วังหมีกระทิง RUN LEARN LAND</h1>
+      <p class="sub">ทิศทางแบรนด์สำหรับทุกฝ่าย — กลั่นจาก positioning ที่เคาะในประชุม 05 ก.ค. + โลโก้จริง + key visual ของงาน</p>
+
+      <div class="essence">
+        <span class="eyebrow" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.24);color:white;">Brand Essence</span>
+        <b>"ดินแดนมีชีวิต ที่ทุกการเคลื่อนไหวกลายเป็นการค้นพบ"</b>
+        <p>เราไม่ใช่งานวิ่ง เราคือ Family Nature Trail Festival — ใช้การวิ่งเป็นประตูพาครอบครัวกลับมาเชื่อมโยงกับธรรมชาติ · "เราไม่คิดจะขายงานนี้ให้ทุกคน เราจะสร้างงานให้คนกลุ่มหนึ่งรักมันมากพอ จนเขาเล่าให้คนอื่นฟังเอง"</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mood">
+    <div class="container">
+      <div class="section-head">
+        <h2>Mood — งานนี้ "รู้สึก" แบบไหน</h2>
+        <p>ห้าความรู้สึกหลัก พร้อมสัดส่วนการใช้: อบอุ่น 40 · สนุกสำรวจ 30 · จริงใจติดดิน 20 · ยิ่งใหญ่แบบเงียบๆ 10</p>
+      </div>
+      <div class="cards">
+        <div class="card"><span class="pct">40%</span><h3>อบอุ่น</h3><p>เหมือนถูกชวนมาบ้านเพื่อน ไม่ใช่มางานอีเวนต์ — สีครีม/ดิน ภาพครอบครัว อาหารท้องถิ่น</p></div>
+        <div class="card"><span class="pct">30%</span><h3>ขี้เล่นแบบนักสำรวจ</h3><p>เด็กถือแว่นขยาย ไม่ใช่นักกีฬาจับเวลา — badge/passport ภารกิจระหว่างทาง</p></div>
+        <div class="card"><span class="pct">20%</span><h3>ติดดิน จริงใจ</h3><p>มือเปื้อนดิน กระดาษฉีก งานคราฟต์ วัสดุธรรมชาติ</p></div>
+        <div class="card"><span class="pct">10%</span><h3>มีความหวัง</h3><p>สิ่งที่ทำวันนี้อยู่ต่อถึงรุ่นลูก — Legacy Wall ศูนย์เรียนรู้</p></div>
+        <div class="card"><span class="pct">ทุกชิ้น</span><h3>เช้าในป่า</h3><p>อากาศก่อนแดดออก หมอกยังไม่จาง — แสงเช้า เขียวอ่อน เสียงนก คือฉากหลังของทุกงาน</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="voice">
+    <div class="container">
+      <div class="section-head">
+        <h2>Tone of Voice</h2>
+        <p>ตัวตนเวลาพูด: <b>"เพื่อนที่รู้จักป่าดี ชวนเราออกไปค้นพบ"</b> — ไม่ใช่ organizer ประกาศการแข่งขัน</p>
+      </div>
+
+      <ol class="rules">
+        <li><b>ชวน ไม่สั่ง</b> — "ไปดูกันไหม" ไม่ใช่ "ห้ามพลาด!"</li>
+        <li><b>เล่าเป็นภาพ</b> — เริ่มจาก moment เล็กๆ (หมอก เสียงป่า รอยเท้า) ไม่เริ่มจากโปรโมชั่น</li>
+        <li><b>ภาษาคน ประโยคสั้น</b> — ไม่มีศัพท์วงการวิ่ง (pace / PB / cut-off) ในคอนเทนต์เล่าเรื่อง</li>
+        <li><b>คำถามชวนสงสัย</b> ใช้ได้บ่อย — "เคยได้ยินเสียงป่าตื่นไหม?"</li>
+        <li><b>ตัวเลขใช้เมื่อสร้างความเชื่อมั่น</b> (ความปลอดภัย ความโปร่งใสของเงิน) ไม่ใช่เพื่อเร่งขาย</li>
+      </ol>
+
+      <div class="vs" style="margin-top:22px;">
+        <div class="vs-col good">
+          <h3>✅ พูดแบบนี้</h3>
+          <ul>
+            <li>"เช้านั้นหมอกยังไม่ทันจาง เราได้ยินเสียงป่ากำลังตื่น"</li>
+            <li>"เด็กๆ จะได้จับดิน ดูแมลง และถามคำถามที่เราตอบไม่ได้"</li>
+            <li>"15 กม. ที่ไม่มีใครถามเวลาของคุณ"</li>
+            <li>"ค่าสมัครของคุณ จะกลายเป็นห้องเรียนกลางป่า"</li>
+          </ul>
+        </div>
+        <div class="vs-col bad">
+          <h3>❌ ไม่พูดแบบนี้</h3>
+          <ul>
+            <li>"สมัครด่วน! รับจำนวนจำกัด!"</li>
+            <li>"กิจกรรมสุดมันส์สำหรับทั้งครอบครัว!!"</li>
+            <li>"พิชิต 15K สุดโหด วัดใจสายเทรล"</li>
+            <li>"รายได้ส่วนหนึ่งมอบให้การกุศล" (กว้างเกิน)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin:22px 0 0; font-weight:800;">คำที่ใช้บ่อย / คำที่เลี่ยง</p>
+      <div class="word-row">
+        <span class="word use">ค้นพบ</span><span class="word use">เชื่อมโยง</span><span class="word use">ผืนดิน</span><span class="word use">เรียนรู้</span><span class="word use">ตื่น (ของป่า)</span><span class="word use">ส่งต่อ</span><span class="word use">ร่วมสร้าง</span>
+        <span class="word avoid">พิชิต</span><span class="word avoid">โหด</span><span class="word avoid">แข่งขัน</span><span class="word avoid">ด่วน</span><span class="word avoid">จำกัด</span><span class="word avoid">เบิร์น</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="palette">
+    <div class="container">
+      <div class="section-head">
+        <h2>Palette — สีของงาน</h2>
+        <p>ทุกสีมาจากโลโก้จริง ใช้ตามสัดส่วน 60-30-10 · ห้าม: ขาวจ้า ดำสนิท นีออน gradient ม่วง-ฟ้า tech</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#FFFDF8;border-bottom:1px solid var(--border);"></div><div class="meta"><b>Paper</b><code>#FFFDF8</code> · พื้น 60% — กระดาษ แสงนวล</div></div>
+        <div class="swatch"><div class="chip" style="background:#F4E7CF;"></div><div class="meta"><b>Cream</b><code>#F4E7CF</code> · พื้น 60% — ผ้าดิบ คราฟต์</div></div>
+        <div class="swatch"><div class="chip" style="background:#9BAA36;"></div><div class="meta"><b>Avocado</b><code>#9BAA36</code> · หลัก 30% — ใบไม้ต้องแสง</div></div>
+        <div class="swatch"><div class="chip" style="background:#202A1C;"></div><div class="meta"><b>Forest</b><code>#202A1C</code> · หลัก 30% — ป่าลึก ตัวหนังสือ</div></div>
+        <div class="swatch"><div class="chip" style="background:#D46F35;"></div><div class="meta"><b>Terracotta</b><code>#D46F35</code> · เน้น 10% — ดินแดง จุด CTA</div></div>
+        <div class="swatch"><div class="chip" style="background:#E3A72D;"></div><div class="meta"><b>Mustard</b><code>#E3A72D</code> · เสริม — แดดเช้า</div></div>
+        <div class="swatch"><div class="chip" style="background:#654638;"></div><div class="meta"><b>Soil</b><code>#654638</code> · เสริม — ดิน</div></div>
+      </div>
+      <div class="ratio-bar" aria-label="สัดส่วนการใช้สี 60-30-10">
+        <div style="width:60%; background:#F4E7CF; color:#654638;">พื้นครีม 60</div>
+        <div style="width:30%; background:#9BAA36;">เขียว 30</div>
+        <div style="width:10%; background:#D46F35;">10</div>
+      </div>
+      <p class="ratio-note">สัดส่วน 60-30-10 — พื้นสว่างเป็นหลัก เขียวเป็นโครง terracotta ไว้เน้นจุดสำคัญเท่านั้น</p>
+    </div>
+  </section>
+
+  <section id="type">
+    <div class="container">
+      <div class="section-head">
+        <h2>Typography &amp; กราฟิก</h2>
+        <p>หนา กลม เป็นมิตร ตามโลโก้ hand-drawn · ห้ามฟอนต์ผอมหรู luxury และฟอนต์ราชการ</p>
+      </div>
+      <div class="specimen">
+        <div class="label">หัวเรื่อง — Google Sans / Noto Sans Thai · น้ำหนัก 800-900</div>
+        <div class="big">ทุกก้าว คือการค้นพบ</div>
+        <div class="label">เนื้อความ — น้ำหนักปกติ บรรทัดโปร่ง (line-height ~1.7)</div>
+        <p class="body">เช้านั้นหมอกยังไม่ทันจาง เราได้ยินเสียงป่ากำลังตื่น เด็กๆ วิ่งนำหน้าไปบนทางดิน แล้วหยุดชี้ให้ดูเห็ดดอกเล็กๆ ข้างทาง — นี่แหละคือสิ่งที่เราอยากให้เกิดขึ้น</p>
+        <div class="label">องค์ประกอบกราฟิก</div>
+        <p class="body" style="margin-top:6px;">กระดาษฉีก (torn paper) · sticker · ลายเส้นมือ ลูกศร เข็มทิศ · texture กระดาษคราฟต์ — ตาม key visual ของงาน</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visual">
+    <div class="container">
+      <div class="section-head">
+        <h2>ภาพถ่าย / วิดีโอ</h2>
+        <p>แสงธรรมชาติ นุ่ม อุ่น เหมือนความทรงจำ — ไม่ปรุงสีจัด ไม่ HDR · เสียง: ธรรมชาติจริงนำ + acoustic เบาๆ ไม่ใช้ EDM/countdown</p>
+      </div>
+      <div class="vs">
+        <div class="vs-col good">
+          <h3>✅ ถ่ายสิ่งเหล่านี้</h3>
+          <ul>
+            <li>แสงเช้า-หมอก · มือสัมผัสต้นไม้ · เท้าเปื้อนดิน</li>
+            <li>เด็กชี้-ก้ม-สงสัย · ครอบครัวจูงมือ</li>
+            <li>คนหันหลังวิ่งหายเข้าเส้นทาง (ชวนตาม)</li>
+            <li>ผู้คนท้องถิ่น อาหาร ฟาร์ม · หมีและกระทิง</li>
+          </ul>
+        </div>
+        <div class="vs-col bad">
+          <h3>❌ ห้าม</h3>
+          <ul>
+            <li>ภาพ hardcore racing — หน้าบิด เหงื่อท่วม close-up</li>
+            <li>มุมกล้อง low-angle วีรบุรุษ</li>
+            <li>ภาพ stock ยิ้มแข็ง</li>
+            <li>เหรียญ-โพเดียมเป็นพระเอก</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="channels">
+    <div class="container">
+      <div class="section-head">
+        <h2>Tone แยกตามช่องทาง</h2>
+        <p>ตามสูตร Content ที่เคาะไว้: 40% Story · 30% Experience · 20% Community · 10% Direct Sales</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ช่องทาง</th><th>บทบาท</th><th>โทน</th></tr></thead>
+          <tbody>
+            <tr><td><b>Facebook</b></td><td>Story 40% — เรื่องเล่าพื้นที่ ผู้คน ความคืบหน้าศูนย์เรียนรู้</td><td>เล่ายาวได้ อบอุ่น จริงใจ</td></tr>
+            <tr><td><b>Instagram</b></td><td>Experience 30% — moment แสงเช้า มือ-ดิน-ใบไม้</td><td>ภาพนำ คำสั้น เหมือนบันทึกเดินทาง</td></tr>
+            <tr><td><b>TikTok / Reel</b></td><td>Experience + Community — POV สำรวจเส้นทาง เบื้องหลังทีม</td><td>สด ขี้เล่น ไม่เนี้ยบเกิน</td></tr>
+            <tr><td><b>กลุ่มวิ่ง/ชุมชน</b></td><td>Community 20% — training run ชวนคุย Q&amp;A</td><td>เพื่อนคุยกับเพื่อน</td></tr>
+            <tr><td><b>ทุกช่อง</b></td><td>Direct sales 10% — เปิดรับสมัคร ราคา deadline</td><td>ชัด สั้น ตรง — ครั้งเดียวที่ขายตรงได้เต็มที่</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="taglines">
+    <div class="container">
+      <div class="section-head">
+        <h2>Tagline Seeds</h2>
+        <p>ตัวเลือกสำหรับทีมพี่กิ๊กนำเสนอในการประชุมครั้งต่อไป — โครง 3 คำของชื่องาน: วิ่ง · เรียนรู้ · ผืนดิน</p>
+      </div>
+      <div class="tagline-grid">
+        <div class="tagline star">"ทุกก้าว คือการค้นพบ"<small>สั้น จำง่าย ครอบทั้งเด็กและนักวิ่ง</small></div>
+        <div class="tagline star">"สนามวิ่งที่ไม่มีใครถามเวลา มีแต่ถามว่าเจออะไรมา"<small>จิกจุดต่าง (ไม่แข่งเวลา) ชัดที่สุด</small></div>
+        <div class="tagline">"วิ่งหนึ่งครั้ง รักธรรมชาติไปทั้งชีวิต"<small>ชูเรื่อง legacy</small></div>
+        <div class="tagline">"ออกวิ่ง ออกเรียนรู้ ออกไปเจอผืนดิน"<small>ล้อโครง Run Learn Land ตรงๆ</small></div>
+        <div class="tagline">"วิ่งเข้าป่า กลับออกมาพร้อมโลกใบใหม่"<small>เล่า transformation</small></div>
+        <div class="tagline">"ดินแดนที่การวิ่งกลายเป็นการเรียนรู้"<small>ตรง essence — ใช้เป็น descriptor ใต้โลโก้ได้</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="checklist">
+    <div class="container">
+      <div class="section-head">
+        <h2>เช็คลิสต์ก่อนปล่อยงานทุกชิ้น</h2>
+        <p>ผ่านครบ 5 ข้อค่อยปล่อย</p>
+      </div>
+      <div class="check">
+        <ul>
+          <li>คนไม่วิ่งดูแล้ว "อยากไป" ไหม (คำถามหลักจากที่ประชุม)</li>
+          <li>เห็นแล้วรู้ใน 3 วินาทีว่า "ครอบครัว + ธรรมชาติ" ไม่ใช่ "งานแข่ง"</li>
+          <li>ใช้สีตาม palette · ฟอนต์หนากลม · มีกลิ่นกระดาษ-คราฟต์</li>
+          <li>น้ำเสียง = เพื่อนชวน ไม่ใช่ประกาศ</li>
+          <li>มีอย่างน้อย 1 องค์ประกอบที่บอกว่า "งานนี้ทิ้งอะไรดีๆ ไว้" (ศูนย์เรียนรู้ / legacy)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    ร่างโดยฝ่ายการตลาด · 16 ก.ค. 2569 · อ้างอิง positioning ประชุม 05 ก.ค. + โลโก้ + key visual · <a href="index.html">กลับหน้า Project Hub</a>
+  </div>
+</footer>
