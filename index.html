@@ -730,6 +730,66 @@
     .bar-row .val { grid-area: val; }
   }
 
+  /* ---------- brand mood & tone ---------- */
+  .essence {
+    margin-top: 18px; background: var(--forest); color: white;
+    border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow);
+    position: relative; overflow: hidden;
+  }
+  .essence::after {
+    content: "RUN • LEARN • LAND"; position: absolute; right: -20px; bottom: -14px;
+    font-size: clamp(40px, 7vw, 90px); font-weight: 900; opacity: 0.07; white-space: nowrap;
+  }
+  .essence b { display: block; font-size: clamp(22px, 3.2vw, 34px); line-height: 1.35; font-weight: 800; max-width: 760px; }
+  .essence p { color: rgba(255, 255, 255, 0.75); margin: 12px 0 0; max-width: 640px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 14px; }
+  .swatch { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); background: white; }
+  .swatch .chip { height: 96px; }
+  .swatch .meta { padding: 12px 14px; font-size: 13px; }
+  .swatch .meta b { display: block; font-size: 14.5px; }
+  .swatch .meta code { color: var(--muted); font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; }
+  .ratio-bar { display: flex; height: 40px; border-radius: 999px; overflow: hidden; margin-top: 20px; box-shadow: var(--shadow); }
+  .ratio-bar div { display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 800; color: white; }
+  .ratio-note { color: var(--muted); font-size: 13.5px; margin-top: 8px; }
+  .vs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 14px; }
+  .vs-col { border-radius: var(--radius-md); padding: 22px; border: 1px solid var(--border); }
+  .vs-col.good { background: rgba(155, 170, 54, 0.14); }
+  .vs-col.bad { background: rgba(212, 111, 53, 0.12); }
+  .vs-col h3 { margin: 0 0 12px; font-size: 17px; }
+  .vs-col ul { margin: 0; padding-left: 0; list-style: none; }
+  .vs-col li {
+    background: rgba(255, 255, 255, 0.75); border-radius: 12px; padding: 12px 16px;
+    margin-bottom: 10px; font-size: 15px; line-height: 1.6;
+  }
+  .vs-col li:last-child { margin-bottom: 0; }
+  .rules { counter-reset: rule; }
+  .rules li { margin: 8px 0; font-size: 15.5px; }
+  .word-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .word { padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+  .word.use { background: rgba(155, 170, 54, 0.18); color: #5F6E1B; }
+  .word.avoid { background: rgba(212, 111, 53, 0.12); color: #A84E1D; text-decoration: line-through; }
+  .specimen { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px; }
+  .specimen .big { font-size: clamp(30px, 5vw, 54px); font-weight: 900; letter-spacing: -0.045em; line-height: 1.05; }
+  .specimen .body { max-width: 560px; color: var(--muted); margin-top: 14px; }
+  .specimen .label { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); margin: 20px 0 6px; }
+  .tagline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 14px; }
+  .tagline {
+    background: var(--cream); border: 2px solid var(--forest); border-radius: 22px;
+    padding: 22px; font-weight: 800; font-size: 19px; line-height: 1.5; position: relative;
+  }
+  .tagline small { display: block; font-weight: 600; font-size: 13px; color: var(--soil); margin-top: 8px; }
+  .tagline.star { background: #F5E4A6; }
+  .tagline.star::before {
+    content: "แนะนำ"; position: absolute; top: -12px; right: 16px;
+    background: var(--terracotta); color: white; font-size: 12px; font-weight: 800;
+    padding: 3px 12px; border-radius: 999px;
+  }
+  .check { background: white; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; }
+  .check ul { margin: 0; padding-left: 0; list-style: none; }
+  .check li { padding: 10px 0 10px 34px; position: relative; font-size: 15.5px; border-bottom: 1px dashed var(--border); }
+  .check li:last-child { border-bottom: 0; }
+  .check li::before { content: "☐"; position: absolute; left: 4px; color: var(--terracotta); font-size: 18px; }
+
   @media (max-width: 460px) {
     .countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .eyebrow { border-radius: 16px; }
@@ -753,6 +813,7 @@
       <a href="#depts">ฝ่ายงาน</a>
       <a href="#finance">การเงิน</a>
       <a href="#impact">Impact</a>
+      <a href="#brand">Mood &amp; Tone</a>
       <a href="#meetings">ประชุม</a>
       <a href="#faq">FAQ</a>
       <a href="#files">ไฟล์</a>
@@ -824,18 +885,18 @@
     </div>
 
     <div class="pillars">
-      <div class="pillar"><b>RUN</b><span>MOVE — เดิน วิ่ง สำรวจ และออกจากชีวิตเดิม</span></div>
-      <div class="pillar"><b>LEARN</b><span>DISCOVER — เรียนจากต้นไม้ ดิน แมลง ผู้คน และประสบการณ์</span></div>
-      <div class="pillar"><b>LAND</b><span>BELONG — เชื่อมโยงกับพื้นที่ ธรรมชาติ ชุมชน และวัฒนธรรม</span></div>
+      <div class="pillar"><b>🏃 RUN</b><span>MOVE — เดิน วิ่ง สำรวจ และออกจากชีวิตเดิม</span></div>
+      <div class="pillar"><b>🔍 LEARN</b><span>DISCOVER — เรียนจากต้นไม้ ดิน แมลง ผู้คน และประสบการณ์</span></div>
+      <div class="pillar"><b>🌱 LAND</b><span>BELONG — เชื่อมโยงกับพื้นที่ ธรรมชาติ ชุมชน และวัฒนธรรม</span></div>
     </div>
 
     <h3 class="journey-title">Journey Experience ของผู้ร่วมงาน — 5 ขั้น</h3>
     <div class="journey">
-      <div class="j-step"><div class="step-no">01 · Arrive</div><p>ฉันมาถึงโลกของ Wang Mi</p></div>
-      <div class="j-step"><div class="step-no">02 · Discover</div><p>ฉันค้นพบธรรมชาติและวังหมี</p></div>
-      <div class="j-step"><div class="step-no">03 · Play &amp; Connect</div><p>ฉันทำกิจกรรมกับครอบครัวและผู้คน</p></div>
-      <div class="j-step"><div class="step-no">04 · Achieve</div><p>ฉันพิชิตบางอย่าง</p></div>
-      <div class="j-step"><div class="step-no">05 · Leave a Legacy</div><p>ฉันทิ้งบางอย่างที่ดีไว้ให้อนาคต — Legacy Wall</p></div>
+      <div class="j-step"><div class="step-no">📍 01 · Arrive</div><p>ฉันมาถึงโลกของ Wang Mi</p></div>
+      <div class="j-step"><div class="step-no">🔎 02 · Discover</div><p>ฉันค้นพบธรรมชาติและวังหมี</p></div>
+      <div class="j-step"><div class="step-no">🎯 03 · Play &amp; Connect</div><p>ฉันทำกิจกรรมกับครอบครัวและผู้คน</p></div>
+      <div class="j-step"><div class="step-no">🏆 04 · Achieve</div><p>ฉันพิชิตบางอย่าง</p></div>
+      <div class="j-step"><div class="step-no">🌳 05 · Leave a Legacy</div><p>ฉันทิ้งบางอย่างที่ดีไว้ให้อนาคต — Legacy Wall</p></div>
     </div>
   </div>
 </section>
@@ -850,10 +911,10 @@
       <p>โครงสร้างด้านล่างเป็นเวอร์ชันพร้อมใช้สำหรับวางระบบสมัคร โดยควรยืนยันระยะจริงอีกครั้งหลังสำรวจและทดสอบเส้นทาง</p>
     </div>
     <div class="route-grid">
-      <div class="route"><small>Family Discovery</small><strong>3 KM</strong><p>เดิน–วิ่งสำหรับเด็ก ครอบครัว และผู้เริ่มต้น เน้นภารกิจเรียนรู้ระหว่างทาง</p></div>
-      <div class="route"><small>Nature Trail</small><strong>5 KM</strong><p>เส้นทางธรรมชาติระยะสั้น เหมาะกับผู้เริ่มวิ่งเทรลและครอบครัวที่พร้อมผจญภัย</p></div>
-      <div class="route"><small>Adventure Trail</small><strong>10 KM</strong><p>เส้นทางที่เพิ่มความท้าทายและการสำรวจภูมิประเทศอย่างจริงจังขึ้น</p></div>
-      <div class="route"><small>Explorer Trail</small><strong>15 KM</strong><p>ระยะยาวสุดของงาน สำหรับผู้มีประสบการณ์และเตรียมร่างกายมาอย่างเหมาะสม</p></div>
+      <div class="route"><small>👨‍👩‍👧‍👦 Family Discovery</small><strong>3 KM</strong><p>เดิน–วิ่งสำหรับเด็ก ครอบครัว และผู้เริ่มต้น เน้นภารกิจเรียนรู้ระหว่างทาง</p></div>
+      <div class="route"><small>🌿 Nature Trail</small><strong>5 KM</strong><p>เส้นทางธรรมชาติระยะสั้น เหมาะกับผู้เริ่มวิ่งเทรลและครอบครัวที่พร้อมผจญภัย</p></div>
+      <div class="route"><small>⛰️ Adventure Trail</small><strong>10 KM</strong><p>เส้นทางที่เพิ่มความท้าทายและการสำรวจภูมิประเทศอย่างจริงจังขึ้น</p></div>
+      <div class="route"><small>🗺️ Explorer Trail</small><strong>15 KM</strong><p>ระยะยาวสุดของงาน สำหรับผู้มีประสบการณ์และเตรียมร่างกายมาอย่างเหมาะสม</p></div>
     </div>
     <p class="route-note"><span class="tbd">รอยืนยัน</span> ระยะจริงทั้งหมดจะยืนยันอีกครั้งหลังทีมลงพื้นที่สำรวจเส้นทาง (ดูงานค้าง "ลงพื้นที่สำรวจเส้นทางครั้งแรก")</p>
     <div class="route-map">
@@ -877,7 +938,7 @@
     </div>
     <div class="cards">
       <article class="card">
-        <h3>Race Essentials</h3>
+        <h3>🎽 Race Essentials</h3>
         <ul>
           <li>Bib หรือหมายเลขผู้เข้าร่วม</li>
           <li>ระบบบันทึกเวลา/Tracking ตามระยะ</li>
@@ -886,7 +947,7 @@
         </ul>
       </article>
       <article class="card">
-        <h3>Event Kit</h3>
+        <h3>🎁 Event Kit</h3>
         <ul>
           <li>เสื้อที่ระลึก</li>
           <li>เหรียญผู้พิชิต</li>
@@ -895,7 +956,7 @@
         </ul>
       </article>
       <article class="card">
-        <h3>Learning Experience</h3>
+        <h3>📖 Learning Experience</h3>
         <ul>
           <li>Nature Passport</li>
           <li>Learning Checkpoint</li>
@@ -918,34 +979,34 @@
     </div>
     <div class="cards">
       <article class="card">
-        <h3>VIP Glamping Tent</h3>
+        <h3>🏕️ VIP Glamping Tent</h3>
         <p>เต็นท์พร้อมเครื่องนอนครบชุดสำหรับครอบครัว หรือเช่าพื้นที่กางเต็นท์สำหรับผู้นำอุปกรณ์มาเอง</p>
         <div class="price">590 – 2,500 บาท</div>
       </article>
       <article class="card">
-        <h3>Farm-to-Table Exclusive Dinner</h3>
+        <h3>🍽️ Farm-to-Table Exclusive Dinner</h3>
         <p>อาหารเย็นวัตถุดิบอินทรีย์จากวังหมี เมนูพิเศษจากเชฟท้องถิ่น พร้อมบรรยากาศธรรมชาติ</p>
         <div class="price">390 บาท/ท่าน</div>
       </article>
       <article class="card">
-        <h3>Family Survival Class</h3>
+        <h3>🔥 Family Survival Class</h3>
         <p>คลาสสอนทักษะเอาตัวรอดสำหรับครอบครัว — ตั้งแต่การจุดไฟ การหาน้ำ การปฐมพยาบาลเบื้องต้น</p>
         <div class="price">290 บาท/ครอบครัว</div>
       </article>
       <article class="card">
-        <h3>Night Safari &amp; Stargazing</h3>
+        <h3>🌙 Night Safari &amp; Stargazing</h3>
         <p>พาเด็กๆ เดินส่องแมลงกลางคืนและดูดาว พร้อมนักธรรมชาติวิทยามืออาชีพ</p>
         <div class="price">190 บาท/คน</div>
       </article>
       <article class="card">
-        <h3>Eco-Merchandise</h3>
+        <h3>🛍️ Eco-Merchandise</h3>
         <p>แก้วน้ำสแตนเลส Mug, หมวกซาฟารีสำหรับเด็ก, เสื้อฮู้ดดี้กันหนาว</p>
         <div class="price">150 – 890 บาท</div>
       </article>
       <article class="card">
-        <h3>Agro-Cafe &amp; ตลาดนัดชุมชน</h3>
+        <h3>☕ Agro-Cafe &amp; ตลาดนัดชุมชน</h3>
         <p>กาแฟสด เบเกอรี่ และสินค้าชุมชนวังหมี ตลาดนัดเปิดตลอดวัน</p>
-        <div class="price">จำหน่ายหน้างาน</div>
+        <div class="price">จำหน่ายหนางาน</div>
       </article>
     </div>
   </div>
@@ -961,12 +1022,12 @@
       <p>Flow ที่ออกแบบให้สอดคล้องกับระบบรับสมัครงานวิ่งมาตรฐานและลดปัญหาข้อมูลไม่ครบหรือชำระเงินไม่สมบูรณ์</p>
     </div>
     <div class="cards">
-      <article class="card"><h3>01 เลือกกิจกรรม</h3><p>เลือกระยะ ประเภทผู้สมัคร แพ็กเกจเสื้อ และบริการจัดส่งหรือรับด้วยตนเอง</p></article>
-      <article class="card"><h3>02 กรอกข้อมูล</h3><p>กรอกข้อมูลส่วนบุคคล วันเกิด ติดต่อฉุกเฉิน ข้อมูลสุขภาพ และข้อมูลที่ใช้ทำประกัน</p></article>
-      <article class="card"><h3>03 ตรวจสอบ</h3><p>ตรวจชื่อ ระยะ ขนาดเสื้อ ยอดชำระ และอ่านเงื่อนไขทั้งหมดก่อนยืนยัน</p></article>
-      <article class="card"><h3>04 ชำระเงิน</h3><p>เลือกช่องทางชำระเงินและเก็บหลักฐานไว้จนกว่าสถานะจะยืนยันสำเร็จ</p></article>
-      <article class="card"><h3>05 รับการยืนยัน</h3><p>ระบบส่งเลขสมัครและรายละเอียดการรับอุปกรณ์ผ่านอีเมลหรือช่องทางที่กำหนด</p></article>
-      <article class="card"><h3>06 เตรียมตัว</h3><p>ติดตาม Race Guide อุปกรณ์บังคับ สภาพอากาศ แผนที่ และเวลา Check-in ก่อนวันงาน</p></article>
+      <article class="card"><h3>🎯 01 เลือกกิจกรรม</h3><p>เลือกระยะ ประเภทผู้สมัคร แพ็กเกจเสื้อ และบริการจัดส่งหรือรับด้วยตนเอง</p></article>
+      <article class="card"><h3>✏️ 02 กรอกข้อมูล</h3><p>กรอกข้อมูลส่วนบุคคล วันเกิด ติดต่อฉุกเฉิน ข้อมูลสุขภาพ และข้อมูลที่ใช้ทำประกัน</p></article>
+      <article class="card"><h3>✅ 03 ตรวจสอบ</h3><p>ตรวจชื่อ ระยะ ขนาดเสื้อ ยอดชำระ และอ่านเงื่อนไขทั้งหมดก่อนยืนยัน</p></article>
+      <article class="card"><h3>💳 04 ชำระเงิน</h3><p>เลือกช่องทางชำระเงินและเก็บหลักฐานไว้จนกว่าสถานะจะยืนยันสำเร็จ</p></article>
+      <article class="card"><h3>📧 05 รับการยืนยัน</h3><p>ระบบส่งเลขสมัครและรายละเอียดการรับอุปกรณ์ผ่านอีเมลหรือช่องทางที่กำหนด</p></article>
+      <article class="card"><h3>🎒 06 เตรียมตัว</h3><p>ติดตาม Race Guide อุปกรณ์บังคับ สภาพอากาศ แผนที่ และเวลา Check-in ก่อนวันงาน</p></article>
     </div>
   </div>
 </section>
@@ -1080,7 +1141,7 @@
     <div class="dept-grid">
 
       <div class="dept">
-        <div class="dept-head"><h3>ออกแบบเส้นทางธรรมชาติ</h3></div>
+        <div class="dept-head"><h3>🗺️ ออกแบบเส้นทางธรรมชาติ</h3></div>
         <div class="people"><span class="who">Head: มี่</span><span class="who member">นัน</span><span class="who member">อิง</span><span class="who member">พร</span><span class="who member">หนุ่ย</span><span class="who member">ปรอ</span></div>
         <p class="dept-goal">เส้นทางที่ <em>สนุก ปลอดภัย มีเรื่องราว และได้เรียนรู้ธรรมชาติ</em></p>
         <details>
@@ -1098,7 +1159,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>กิจกรรมและ Event</h3></div>
+        <div class="dept-head"><h3>🎉 กิจกรรมและ Event</h3></div>
         <div class="people"><span class="who">Head: มน</span><span class="who member">กิ๊ก</span><span class="who member">หญิง</span><span class="who member">ไลล่า</span><span class="who member">เบนซ์</span></div>
         <p class="dept-goal">สร้าง <em>Festival Experience</em> ไม่ใช่แค่งานแข่งขัน</p>
         <details>
@@ -1117,7 +1178,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>การตลาดและการสื่อสาร</h3></div>
+        <div class="dept-head"><h3>📣 การตลาดและการสื่อสาร</h3></div>
         <div class="people"><span class="who">Head: กวาง</span><span class="who member">กิ๊ก</span><span class="who member">อิง</span></div>
         <p class="dept-goal">ทำให้งาน <em>มีตัวตนชัด</em> และคนอยากพูดถึง</p>
         <details>
@@ -1137,7 +1198,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>ระดมทุนและสปอนเซอร์</h3></div>
+        <div class="dept-head"><h3>💰 ระดมทุนและสปอนเซอร์</h3></div>
         <div class="people"><span class="who">Head: ปรอ</span><span class="who member">กอล์ฟ</span><span class="who member">เหลียน</span></div>
         <p class="dept-goal">หาพาร์ตเนอร์ที่ <em>เข้ากับจิตวิญญาณงาน</em> — เป้า 1,000,000 บาท</p>
         <details>
@@ -1153,7 +1214,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>ชุมชนและผู้มีส่วนได้ส่วนเสีย</h3></div>
+        <div class="dept-head"><h3>🤝 ชุมชนและผู้มีส่วนได้ส่วนเสีย</h3></div>
         <div class="people"><span class="who">Head: พี่ปุ๋ย</span><span class="who">Head: ทัช</span></div>
         <p class="dept-goal">ให้งาน <em>เติบโตไปกับพื้นที่</em></p>
         <details>
@@ -1169,7 +1230,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>ปฏิบัติการและโลจิสติกส์</h3></div>
+        <div class="dept-head"><h3>🚚 ปฏิบัติการและโลจิสติกส์</h3></div>
         <div class="people"><span class="who">Head: พี่ปุ๋ย</span><span class="who">Head: หนุ่ย</span><span class="who member">สม</span><span class="who member">ที</span></div>
         <p class="dept-goal">ทำให้งาน <em>ไหลลื่น</em> และจัดการได้จริง</p>
         <details>
@@ -1186,7 +1247,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>ความปลอดภัยและการแพทย์</h3></div>
+        <div class="dept-head"><h3>🚑 ความปลอดภัยและการแพทย์</h3></div>
         <div class="people"><span class="who">Head: เก่ง</span></div>
         <p class="dept-goal">ลดความเสี่ยงสูงสุด <em>พร้อมทุกสถานการณ์</em></p>
         <details>
@@ -1202,7 +1263,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>สิ่งแวดล้อมและความยั่งยืน + คาร์บอนเครดิต</h3></div>
+        <div class="dept-head"><h3>🌱 สิ่งแวดล้อมและความยั่งยืน + คาร์บอนเครดิต</h3></div>
         <div class="people"><span class="who">Head: มิกซ์</span><span class="who member">เหลียน</span><span class="who member">ล่า</span></div>
         <p class="dept-goal">ต้นแบบ <em>Green Trail Event</em> — เป้า carbon = 0</p>
         <details>
@@ -1221,7 +1282,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>การเงินและบัญชี</h3></div>
+        <div class="dept-head"><h3>💵 การเงินและบัญชี</h3></div>
         <div class="people"><span class="who">Head: นีย์</span><span class="who member">พร</span></div>
         <p class="dept-goal">ควบคุมต้นทุน <em>ยั่งยืนทางการเงิน</em></p>
         <details>
@@ -1238,7 +1299,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>กฎหมายและเอกสาร</h3></div>
+        <div class="dept-head"><h3>⚖️ กฎหมายและเอกสาร</h3></div>
         <div class="people"><span class="who">Head: ขวัญ</span><span class="who">Head: เต้ย</span></div>
         <p class="dept-goal">ถูกต้องตามกฎหมาย <em>ลดความเสี่ยง</em></p>
         <details>
@@ -1254,7 +1315,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>อาสาสมัครและบุคลากร</h3></div>
+        <div class="dept-head"><h3>🙋 อาสาสมัครและบุคลากร</h3></div>
         <div class="people"><span class="who">Head: ช็อคชิพ</span><span class="who">Head: ล่า</span></div>
         <p class="dept-goal">ทีมงานที่ <em>มีพลังและเข้าใจงาน</em></p>
         <details>
@@ -1269,7 +1330,7 @@
       </div>
 
       <div class="dept">
-        <div class="dept-head"><h3>สรุปผลและประเมินผล</h3></div>
+        <div class="dept-head"><h3>📊 สรุปผลและประเมินผล</h3></div>
         <div class="people"><span class="who">Head: จอย</span></div>
         <p class="dept-goal">วัดผลเพื่อ <em>พัฒนางานระยะยาว</em></p>
         <details>
@@ -1368,6 +1429,201 @@
           <tr><td>ต้นทุนการจัดงาน</td><td>ความปลอดภัย ระบบรับสมัคร การผลิต และปฏิบัติการ</td><td><span class="tbd">รอยืนยันสัดส่วน</span></td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<section id="brand">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Brand Direction</span>
+        <h2>Mood &amp; Tone ของงาน</h2>
+      </div>
+      <p>ทิศทางแบรนด์ที่กลั่นจาก positioning ประชุม 05 ก.ค. + โลโก้จริง + key visual — สำหรับทุกฝ่ายใช้เป็นแนวทางทำงาน</p>
+    </div>
+
+    <div class="essence">
+      <span class="eyebrow" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.24);color:white;">Brand Essence</span>
+      <b>"ดินแดนมีชีวิต ที่ทุกการเคลื่อนไหวกลายเป็นการค้นพบ"</b>
+      <p>เราไม่ใช่งานวิ่ง เราคือ Family Nature Trail Festival — ใช้การวิ่งเป็นประตูพาครอบครัวกลับมาเชื่อมโยงกับธรรมชาติ</p>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">Mood — งานนี้ "รู้สึก" แบบไหน</h3>
+        <p>ห้าความรู้สึกหลัก พร้อมสัดส่วนการใช้</p>
+      </div>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));">
+        <div class="card"><span class="pct" style="display:block;font-size:30px;font-weight:900;color:var(--terracotta);margin-bottom:4px;font-variant-numeric:tabular-nums;">40%</span><h3>🏡 อบอุ่น</h3><p>เหมือนถูกชวนมาบ้านเพื่อน ไม่ใช่มางานอีเวนต์ — สีครีม/ดิน ภาพครอบครัว อาหารท้องถิ่น</p></div>
+        <div class="card"><span class="pct" style="display:block;font-size:30px;font-weight:900;color:var(--terracotta);margin-bottom:4px;font-variant-numeric:tabular-nums;">30%</span><h3>🔎 ขี้เล่นแบบนักสำรวจ</h3><p>เด็กถือแว่นขยาย ไม่ใช่นักกีฬาจับเวลา — badge/passport ภารกิจระหว่างทาง</p></div>
+        <div class="card"><span class="pct" style="display:block;font-size:30px;font-weight:900;color:var(--terracotta);margin-bottom:4px;font-variant-numeric:tabular-nums;">20%</span><h3>🌍 ติดดิน จริงใจ</h3><p>มือเปื้อนดิน กระดาษฉีก งานคราฟต์ วัสดุธรรมชาติ</p></div>
+        <div class="card"><span class="pct" style="display:block;font-size:30px;font-weight:900;color:var(--terracotta);margin-bottom:4px;font-variant-numeric:tabular-nums;">10%</span><h3>🌟 มีความหวัง</h3><p>สิ่งที่ทำวันนี้อยู่ต่อถึงรุ่นลูก — Legacy Wall ศูนย์เรียนรู้</p></div>
+        <div class="card"><span class="pct" style="display:block;font-size:30px;font-weight:900;color:var(--terracotta);margin-bottom:4px;font-variant-numeric:tabular-nums;">ทุกชิ้น</span><h3>🌄 เช้าในป่า</h3><p>อากาศก่อนแดดออก หมอกยังไม่จาง — แสงเช้า เขียวอ่อน เสียงนก คือฉากหลังของทุกงาน</p></div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">Tone of Voice</h3>
+        <p>ตัวตนเวลาพูด: <b>"เพื่อนที่รู้จักป่าดี ชวนเราออกไปค้นพบ"</b> — ไม่ใช่ organizer ประกาศการแข่งขัน</p>
+      </div>
+
+      <ol class="rules">
+        <li><b>ชวน ไม่สั่ง</b> — "ไปดูกันไหม" ไม่ใช่ "ห้ามพลาด!"</li>
+        <li><b>เล่าเป็นภาพ</b> — เริ่มจาก moment เล็กๆ (หมอก เสียงป่า รอยเท้า) ไม่เริ่มจากโปรโมชั่น</li>
+        <li><b>ภาษาคน ประโยคสั้น</b> — ไม่มีศัพท์วงการวิ่ง (pace / PB / cut-off) ในคอนเทนต์เล่าเรื่อง</li>
+        <li><b>คำถามชวนสงสัย</b> ใช้ได้บ่อย — "เคยได้ยินเสียงป่าตื่นไหม?"</li>
+        <li><b>ตัวเลขใช้เมื่อสร้างความเชื่อมั่น</b> (ความปลอดภัย ความโปร่งใสของเงิน) ไม่ใช่เพื่อเร่งขาย</li>
+      </ol>
+
+      <div class="vs" style="margin-top:18px;">
+        <div class="vs-col good">
+          <h3>✅ พูดแบบนี้</h3>
+          <ul>
+            <li>"เช้านั้นหมอกยังไม่ทันจาง เราได้ยินเสียงป่ากำลังตื่น"</li>
+            <li>"เด็กๆ จะได้จับดิน ดูแมลง และถามคำถามที่เราตอบไม่ได้"</li>
+            <li>"15 กม. ที่ไม่มีใครถามเวลาของคุณ"</li>
+            <li>"ค่าสมัครของคุณ จะกลายเป็นห้องเรียนกลางป่า"</li>
+          </ul>
+        </div>
+        <div class="vs-col bad">
+          <h3>❌ ไม่พูดแบบนี้</h3>
+          <ul>
+            <li>"สมัครด่วน! รับจำนวนจำกัด!"</li>
+            <li>"กิจกรรมสุดมันส์สำหรับทั้งครอบครัว!!"</li>
+            <li>"พิชิต 15K สุดโหด วัดใจสายเทรล"</li>
+            <li>"รายได้ส่วนหนึ่งมอบให้การกุศล" (กว้างเกิน)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;">
+        <p style="font-weight:800;">คำที่ใช้บ่อย / คำที่เลี่ยง</p>
+        <div class="word-row">
+          <span class="word use">ค้นพบ</span><span class="word use">เชื่อมโยง</span><span class="word use">ผืนดิน</span><span class="word use">เรียนรู้</span><span class="word use">ตื่น (ของป่า)</span><span class="word use">ส่งต่อ</span><span class="word use">ร่วมสร้าง</span>
+          <span class="word avoid">พิชิต</span><span class="word avoid">โหด</span><span class="word avoid">แข่งขัน</span><span class="word avoid">ด่วน</span><span class="word avoid">จำกัด</span><span class="word avoid">เบิร์น</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">Palette — สีของงาน</h3>
+        <p>ทุกสีมาจากโลโก้จริง ใช้ตามสัดส่วน 60-30-10 · ห้าม: ขาวจ้า ดำสนิท นีออน gradient ม่วง-ฟ้า tech</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#FFFDF8;border-bottom:1px solid var(--border);"></div><div class="meta"><b>Paper</b><code>#FFFDF8</code> · พื้น 60% — กระดาษ แสงนวล</div></div>
+        <div class="swatch"><div class="chip" style="background:#F4E7CF;"></div><div class="meta"><b>Cream</b><code>#F4E7CF</code> · พื้น 60% — ผ้าดิบ คราฟต์</div></div>
+        <div class="swatch"><div class="chip" style="background:#9BAA36;"></div><div class="meta"><b>Avocado</b><code>#9BAA36</code> · หลัก 30% — ใบไม้ต้องแสง</div></div>
+        <div class="swatch"><div class="chip" style="background:#202A1C;"></div><div class="meta"><b>Forest</b><code>#202A1C</code> · หลัก 30% — ป่าลึก ตัวหนังสือ</div></div>
+        <div class="swatch"><div class="chip" style="background:#D46F35;"></div><div class="meta"><b>Terracotta</b><code>#D46F35</code> · เน้น 10% — ดินแดง จุด CTA</div></div>
+        <div class="swatch"><div class="chip" style="background:#E3A72D;"></div><div class="meta"><b>Mustard</b><code>#E3A72D</code> · เสริม — แดดเช้า</div></div>
+        <div class="swatch"><div class="chip" style="background:#654638;"></div><div class="meta"><b>Soil</b><code>#654638</code> · เสริม — ดิน</div></div>
+      </div>
+      <div class="ratio-bar">
+        <div style="width:60%; background:#F4E7CF; color:#654638;">พื้นครีม 60</div>
+        <div style="width:30%; background:#9BAA36;">เขียว 30</div>
+        <div style="width:10%; background:#D46F35;">10</div>
+      </div>
+      <p class="ratio-note">สัดส่วน 60-30-10 — พื้นสว่างเป็นหลัก เขียวเป็นโครง terracotta ไว้เน้นจุดสำคัญเท่านั้น</p>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">Typography &amp; กราฟิก</h3>
+        <p>หนา กลม เป็นมิตร ตามโลโก้ hand-drawn · ห้ามฟอนต์ผอมหรู luxury และฟอนต์ราชการ</p>
+      </div>
+      <div class="specimen">
+        <div class="label">หัวเรื่อง — Google Sans / Noto Sans Thai · น้ำหนัก 800-900</div>
+        <div class="big">ทุกก้าว คือการค้นพบ</div>
+        <div class="label">เนื้อความ — น้ำหนักปกติ บรรทัดโปร่ง (line-height ~1.7)</div>
+        <p class="body">เช้านั้นหมอกยังไม่ทันจาง เราได้ยินเสียงป่ากำลังตื่น เด็กๆ วิ่งนำหน้าไปบนทางดิน แล้วหยุดชี้ให้ดูเห็ดดอกเล็กๆ ข้างทาง — นี่แหละคือสิ่งที่เราอยากให้เกิดขึ้น</p>
+        <div class="label">องค์ประกอบกราฟิก</div>
+        <p class="body" style="margin-top:6px;">กระดาษฉีก (torn paper) · sticker · ลายเส้นมือ ลูกศร เข็มทิศ · texture กระดาษคราฟต์ — ตาม key visual ของงาน</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">ภาพถ่าย / วิดีโอ / กราฟิก</h3>
+        <p>แสงธรรมชาติ นุ่ม อุ่น เหมือนความทรงจำ — ไม่ปรุงสีจัด ไม่ HDR</p>
+      </div>
+      <div class="vs">
+        <div class="vs-col good">
+          <h3>✅ ถ่ายสิ่งเหล่านี้</h3>
+          <ul>
+            <li>แสงเช้า-หมอก · มือสัมผัสต้นไม้ · เท้าเปื้อนดิน</li>
+            <li>เด็กชี้-ก้ม-สงสัย · ครอบครัวจูงมือ</li>
+            <li>คนหันหลังวิ่งหายเข้าเส้นทาง (ชวนตาม)</li>
+            <li>ผู้คนท้องถิ่น อาหาร ฟาร์ม · หมีและกระทิง</li>
+          </ul>
+        </div>
+        <div class="vs-col bad">
+          <h3>❌ ห้าม</h3>
+          <ul>
+            <li>ภาพ hardcore racing — หน้าบิด เหงื่อท่วม close-up</li>
+            <li>มุมกล้อง low-angle วีรบุรุษ</li>
+            <li>ภาพ stock ยิ้มแข็ง</li>
+            <li>เหรียญ-โพเดียมเป็นพระเอก</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">Tagline Seeds</h3>
+        <p>ตัวเลือกสำหรับทีมพี่กิ๊กนำเสนอในประชุมครั้งต่อไป — โครง 3 คำของชื่องาน: วิ่ง · เรียนรู้ · ผืนดิน</p>
+      </div>
+      <div class="tagline-grid">
+        <div class="tagline star">"ทุกก้าว คือการค้นพบ"<small>สั้น จำง่าย ครอบทั้งเด็กและนักวิ่ง</small></div>
+        <div class="tagline star">"สนามวิ่งที่ไม่มีใครถามเวลา มีแต่ถามว่าเจออะไรมา"<small>จิกจุดต่าง (ไม่แข่งเวลา) ชัดที่สุด</small></div>
+        <div class="tagline">"วิ่งหนึ่งครั้ง รักธรรมชาติไปทั้งชีวิต"<small>ชูเรื่อง legacy</small></div>
+        <div class="tagline">"ออกวิ่ง ออกเรียนรู้ ออกไปเจอผืนดิน"<small>ล้อโครง Run Learn Land ตรงๆ</small></div>
+        <div class="tagline">"วิ่งเข้าป่า กลับออกมาพร้อมโลกใบใหม่"<small>เล่า transformation</small></div>
+        <div class="tagline">"ดินแดนที่การวิ่งกลายเป็นการเรียนรู้"<small>ตรง essence — ใช้เป็น descriptor ใต้โลโก้ได้</small></div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">Tone แยกตามช่องทาง</h3>
+        <p>ตามสูตร Content: 40% Story · 30% Experience · 20% Community · 10% Direct Sales</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ช่องทาง</th><th>บทบาท</th><th>โทน</th></tr></thead>
+          <tbody>
+            <tr><td><b>Facebook</b></td><td>Story 40% — เรื่องเล่าพื้นที่ ผู้คน ความคืบหน้าศูนย์เรียนรู้</td><td>เล่ายาวได้ อบอุ่น จริงใจ</td></tr>
+            <tr><td><b>Instagram</b></td><td>Experience 30% — moment แสงเช้า มือ-ดิน-ใบไม้</td><td>ภาพนำ คำสั้น เหมือนบันทึกเดินทาง</td></tr>
+            <tr><td><b>TikTok / Reel</b></td><td>Experience + Community — POV สำรวจเส้นทาง เบื้องหลังทีม</td><td>สด ขี้เล่น ไม่เนี้ยบเกิน</td></tr>
+            <tr><td><b>กลุ่มวิ่ง/ชุมชน</b></td><td>Community 20% — training run ชวนคุย Q&amp;A</td><td>เพื่อนคุยกับเพื่อน</td></tr>
+            <tr><td><b>ทุกช่อง</b></td><td>Direct sales 10% — เปิดรับสมัคร ราคา deadline</td><td>ชัด สั้น ตรง — ครั้งเดียวที่ขายตรงได้เต็มที่</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;">
+      <div class="section-head">
+        <h3 style="font-size:clamp(22px,3.5vw,34px);font-weight:900;letter-spacing:-0.035em;margin:0;">เช็คลิสต์ก่อนปล่อยงานทุกชิ้น</h3>
+        <p>ผ่านครบ 5 ข้อค่อยปล่อย</p>
+      </div>
+      <div class="check">
+        <ul>
+          <li>คนไม่วิ่งดูแล้ว "อยากไป" ไหม</li>
+          <li>เห็นแล้วรู้ใน 3 วินาทีว่า "ครอบครัว + ธรรมชาติ" ไม่ใช่ "งานแข่ง"</li>
+          <li>ใช้สีตาม palette · ฟอนต์หนากลม · มีกลิ่นกระดาษ-คราฟต์</li>
+          <li>น้ำเสียง = เพื่อนชวน ไม่ใช่ประกาศ</li>
+          <li>มีอย่างน้อย 1 องค์ประกอบที่บอกว่า "งานนี้ทิ้งอะไรดีๆ ไว้" (ศูนย์เรียนรู้ / legacy)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:30px;">
+      <h3>Brand guideline ฉบับเต็ม</h3>
+      <p>ดูรายละเอียดครบทุกหัวข้อ พร้อมตัวอย่างเพิ่มเติม ที่หน้า <a href="brand.html" style="color:var(--mustard);font-weight:800;">Mood &amp; Tone ฉบับเต็ม →</a></p>
     </div>
   </div>
 </section>
