@@ -5,7 +5,7 @@ Run `git diff data/slides.txt` to see exactly what changed, then propagate those
 
 1. **`index.html`** — the live dashboard (Thai). Update only the affected sections:
    - `#overview` metrics — if dates, revenue/expense targets, or participant counts changed
-   - `#routes` / `#packages` / `#registration` / `#rules` / `#impact` / `#safety-code` / `#faq` — public-facing
+   - `#routes` / `#packages` / `#addons` / `#registration` / `#rules` / `#impact` / `#safety-code` / `#faq` — public-facing
      event info; update if the slides confirm items currently marked with a `.tbd` "รอยืนยัน" chip
      (replace the chip with the confirmed value) or change routes/packages/rules
    - `#tasks` — add/remove/update pending action items; keep owner tags (`tag owner`) and due tags (`tag due`); mark resolved items by removing them or converting the dot to `dot good` + `tag done`
